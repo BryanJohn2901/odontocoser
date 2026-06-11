@@ -1,0 +1,12 @@
+{
+  "name": "odontocoser",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./css/styles.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./css/styles.css --watch",
+    "dev": "npm run watch:css"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

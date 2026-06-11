@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2.5 rounded-full bg-blue-dark px-7 py-3.5 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#153049] hover:shadow-lg;
+  }
+
+  .btn-primary-sm {
+    @apply btn-primary px-5 py-2.5 text-xs;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2.5 rounded-full border-2 border-white bg-white px-7 py-3.5 text-sm font-semibold text-blue-accent transition-all hover:-translate-y-0.5 hover:bg-white/90 hover:shadow-lg;
+  }
+
+  .btn-icon {
+    @apply h-5 w-5 shrink-0;
+  }
+
+  .section-container {
+    @apply mx-auto max-w-container px-6;
+  }
+
+  .faq-answer {
+    @apply grid grid-rows-[0fr] transition-[grid-template-rows] duration-300;
+  }
+
+  .faq-item.is-active .faq-answer {
+    @apply grid-rows-[1fr];
+  }
+
+  .faq-item.is-active .faq-icon-plus {
+    @apply hidden;
+  }
+
+  .faq-item.is-active .faq-icon-minus {
+    @apply block;
+  }
+
+  .faq-item:not(.is-active) .faq-icon-minus {
+    @apply hidden;
+  }
+}
