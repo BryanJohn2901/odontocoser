@@ -3,8 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Odonto Coser | Clínica Odontológica em Araucária</title>
-  <meta name="description" content="Odonto Coser - Especialistas em Odontologia em Araucária. Com 35 anos de experiência e mais de 13.000 clientes atendidos.">
+
+  <!-- ── SEO primário ── -->
+  <title>Odonto Coser | Clínica Odontológica em Araucária — Implantes, Ortodontia e Harmonização</title>
+  <meta name="description" content="Clínica Odonto Coser em Araucária-PR: 35 anos de experiência, +13.000 pacientes. Implantes dentários, ortodontia, harmonização orofacial, clareamento, facetas e muito mais. Agende sua avaliação grátis!">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Odonto Coser">
+  <meta name="theme-color" content="#2A9FD4">
+  <link rel="canonical" href="https://odontocoser.com.br/">
+
+  <!-- ── Open Graph ── -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://odontocoser.com.br/">
+  <meta property="og:title" content="Odonto Coser | Clínica Odontológica em Araucária">
+  <meta property="og:description" content="Especialistas em Odontologia em Araucária há 35 anos. Implantes, ortodontia, harmonização facial e clareamento. Agende sua avaliação!">
+  <meta property="og:image" content="https://odontocoser.com.br/assets/Odonto-Coser-Clinica-Araucaria.webp">
+  <meta property="og:image:width" content="576">
+  <meta property="og:image:height" content="326">
+  <meta property="og:image:alt" content="Fachada da Clínica Odonto Coser em Araucária">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Odonto Coser">
+
+  <!-- ── Twitter Card ── -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Odonto Coser | Clínica Odontológica em Araucária">
+  <meta name="twitter:description" content="Especialistas em Odontologia em Araucária há 35 anos. Agende sua avaliação!">
+  <meta name="twitter:image" content="https://odontocoser.com.br/assets/Odonto-Coser-Clinica-Araucaria.webp">
+
+  <!-- ── Schema.org — Dentista / Negócio Local ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Odonto Coser",
+    "alternateName": "Clínica Odontológica Odonto Coser",
+    "description": "Clínica odontológica em Araucária-PR com 35 anos de experiência e mais de 13.000 pacientes atendidos. Especialidades: implantes, ortodontia, harmonização orofacial, clareamento, facetas e muito mais.",
+    "url": "https://odontocoser.com.br/",
+    "telephone": ["+55-41-3642-1476", "+55-41-99215-9233"],
+    "email": "odontocoser@hotmail.com",
+    "foundingDate": "1989",
+    "image": "https://odontocoser.com.br/assets/Odonto-Coser-Clinica-Araucaria.webp",
+    "logo": "https://odontocoser.com.br/assets/Odonto-Coser.webp",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "R. Paulo Alves Pinto, 585 - Centro",
+      "addressLocality": "Araucária",
+      "addressRegion": "PR",
+      "postalCode": "83702-240",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-25.5924",
+      "longitude": "-49.4095"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "19:00"
+      }
+    ],
+    "priceRange": "$$",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.7",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "500"
+    },
+    "sameAs": [
+      "https://www.instagram.com/odontocoser",
+      "https://www.facebook.com/odontocoser"
+    ],
+    "employee": {
+      "@type": "Person",
+      "name": "Dr. Leonardo Coser",
+      "jobTitle": "Cirurgião-Dentista"
+    },
+    "hasMap": "https://maps.google.com/maps?q=Odonto+Coser,+R.+Paulo+Alves+Pinto,+585+-+Centro,+Araucária+-+PR"
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,7 +137,15 @@
     ::-webkit-scrollbar-thumb:hover { background: #1A3D5C; }
     * { scrollbar-width: thin; scrollbar-color: #2A9FD4 #e0f4fa; }
 
-    /* ─── Prevent AOS from adding a horizontal scrollbar ─── */
+    /* ─── Acessibilidade: foco visível ─── */
+    :focus-visible {
+      outline: 3px solid #2A9FD4;
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    button:focus-visible, a:focus-visible { outline: 3px solid #2A9FD4; outline-offset: 3px; }
+
+    /* ─── Prevent AOS horizontal scrollbar ─── */
     html { overflow-x: hidden; }
 
     /* ─── Button shimmer ─── */
@@ -88,9 +176,7 @@
     .btn-primary-sm:hover { animation: none; transform: translateY(-3px) scale(1.04); box-shadow: 0 12px 24px rgba(42,159,212,0.4); }
 
     /* btn-outline pulse border */
-    .btn-outline {
-      animation: outline-pulse 3s ease-in-out infinite;
-    }
+    .btn-outline { animation: outline-pulse 3s ease-in-out infinite; }
     @keyframes outline-pulse {
       0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
       50%       { box-shadow: 0 0 0 6px rgba(255,255,255,0.08); }
@@ -98,38 +184,26 @@
     .btn-outline:hover { animation: none; transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
 
     /* ─── Nav underline hover ─── */
-    #desktop-nav a {
-      position: relative;
-      padding-bottom: 4px;
-    }
+    #desktop-nav a { position: relative; padding-bottom: 4px; }
     #desktop-nav a::after {
-      content: '';
-      position: absolute;
+      content: ''; position: absolute;
       bottom: 0; left: 50%;
       transform: translateX(-50%);
       width: 0; height: 2px;
-      background: #2A9FD4;
-      border-radius: 99px;
+      background: #2A9FD4; border-radius: 99px;
       transition: width 0.3s ease;
     }
     #desktop-nav a:hover::after { width: 100%; }
 
     /* ─── Infinite carousel ─── */
-    .carousel-outer {
-      overflow: hidden;
-      width: 100%;
-    }
+    .carousel-outer { overflow: hidden; width: 100%; }
     .carousel-track {
-      display: flex;
-      width: max-content;
-      gap: 14px;
-      padding: 8px 0;
+      display: flex; width: max-content;
+      gap: 14px; padding: 8px 0;
     }
     .carousel-track img {
-      width: 240px;
-      height: 170px;
-      object-fit: cover;
-      border-radius: 14px;
+      width: 240px; height: 170px;
+      object-fit: cover; border-radius: 14px;
       flex-shrink: 0;
       transition: transform 0.35s ease, filter 0.35s ease, box-shadow 0.35s ease;
       cursor: pointer;
@@ -150,9 +224,7 @@
       100% { transform: translateX(0); }
     }
     .carousel-outer:hover .carousel-left,
-    .carousel-outer:hover .carousel-right {
-      animation-play-state: paused;
-    }
+    .carousel-outer:hover .carousel-right { animation-play-state: paused; }
 
     /* ─── Specialty card icon ─── */
     .specialty-icon-fa {
@@ -160,28 +232,20 @@
       color: rgba(255,255,255,0.85);
       transition: transform 0.4s ease, color 0.3s ease;
     }
-    .group:hover .specialty-icon-fa {
-      transform: scale(1.2) rotate(-6deg);
-      color: #2A9FD4;
-    }
+    .group:hover .specialty-icon-fa { transform: scale(1.2) rotate(-6deg); color: #2A9FD4; }
 
-    /* ─── Info bar icon bounce ─── */
+    /* ─── Info bar icon ─── */
     .info-icon { transition: transform 0.3s ease; display: inline-block; }
     .info-icon:hover { transform: scale(1.2); }
 
     /* ─── Footer contact row hover ─── */
     .contact-row {
       transition: all 0.3s ease;
-      border-radius: 10px;
-      padding: 8px 10px;
-      margin-left: -10px;
+      border-radius: 10px; padding: 8px 10px; margin-left: -10px;
     }
-    .contact-row:hover {
-      background: rgba(42,159,212,0.12);
-      padding-left: 18px;
-    }
+    .contact-row:hover { background: rgba(42,159,212,0.12); padding-left: 18px; }
 
-    /* ─── Section image hover ─── */
+    /* ─── Image zoom on hover ─── */
     .img-hover-zoom { overflow: hidden; }
     .img-hover-zoom img { transition: transform 0.6s ease; }
     .img-hover-zoom:hover img { transform: scale(1.06); }
@@ -193,30 +257,19 @@
       50%       { filter: drop-shadow(0 0 6px rgba(250,204,21,0.6)); }
     }
 
-    /* ─── Hero badge pulse ─── */
+    /* ─── Hero badge ─── */
     .hero-badge { animation: badge-enter 0.6s ease forwards; }
     @keyframes badge-enter {
       from { opacity: 0; transform: translateY(-10px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ─── Stat number ─── */
-    .stat-box {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .stat-box:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(42,159,212,0.2);
-    }
-
-    /* ─── AOS custom easing ─── */
-    [data-aos] { pointer-events: none; }
-    [data-aos].aos-animate { pointer-events: auto; }
+    /* ─── Stat box ─── */
+    .stat-box { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .stat-box:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(42,159,212,0.2); }
 
     /* ─── Mobile sidebar nav ─── */
-    #mobile-nav {
-      transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
-    }
+    #mobile-nav { transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1); }
 
     /* ─── Testimonials mobile fix ─── */
     @media (max-width: 767px) {
@@ -229,10 +282,13 @@
       #carousel-next {
         top: auto; bottom: 20px;
         transform: none;
-        right: calc(50% - 52px);
-        left: auto;
+        right: calc(50% - 52px); left: auto;
       }
     }
+
+    /* ─── AOS ─── */
+    [data-aos] { pointer-events: none; }
+    [data-aos].aos-animate { pointer-events: auto; }
   </style>
 
   <link rel="stylesheet" href="css/styles.css">
@@ -241,10 +297,10 @@
 <body class="font-sans text-slate-600 antialiased overflow-x-hidden bg-slate-50">
 
   <!-- ═══════════════ HEADER ═══════════════ -->
-  <header id="topo" class="fixed inset-x-0 top-0 z-50 h-20 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all">
+  <header id="topo" class="fixed inset-x-0 top-0 z-50 h-20 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all" role="banner">
     <div class="section-container grid h-20 grid-cols-[1fr_auto_1fr] items-center gap-5 max-md:flex max-md:justify-between">
-      <a href="#topo" class="justify-self-start transition-transform hover:scale-105">
-        <img src="assets/Odonto-Coser (1).webp" alt="Odonto Coser - Clínica Odontológica" class="h-10 w-auto lg:h-12">
+      <a href="#topo" class="justify-self-start transition-transform hover:scale-105" aria-label="Odonto Coser — Voltar ao topo">
+        <img src="assets/Odonto-Coser (1).webp" alt="Odonto Coser — Clínica Odontológica em Araucária" width="250" height="65" class="h-10 w-auto lg:h-12">
       </a>
       <nav id="desktop-nav" class="hidden items-center gap-10 justify-self-center md:flex" aria-label="Navegação principal">
         <a href="#especialidades" class="text-sm font-semibold tracking-wide text-brand-dark transition-colors hover:text-brand-primary">Especialidades</a>
@@ -253,14 +309,14 @@
         <a href="#contato" class="text-sm font-semibold tracking-wide text-brand-dark transition-colors hover:text-brand-primary">Contato</a>
       </nav>
       <div class="flex items-center gap-6 justify-self-end">
-        <a href="https://wa.me/5541992159233" class="btn-primary-sm max-sm:px-4" target="_blank" rel="noopener noreferrer">
-          <i class="fa-brands fa-whatsapp text-base"></i>
+        <a href="https://wa.me/5541992159233" class="btn-primary-sm max-sm:px-4" target="_blank" rel="noopener noreferrer" aria-label="Agendar consulta pelo WhatsApp">
+          <i class="fa-brands fa-whatsapp text-base" aria-hidden="true"></i>
           <span class="max-sm:hidden">Agendar Consulta</span>
         </a>
-        <button id="menu-btn" class="flex flex-col gap-1.5 p-1 md:hidden" aria-label="Abrir menu" aria-expanded="false">
-          <span class="block h-0.5 w-6 rounded-full bg-brand-dark transition-transform"></span>
-          <span class="block h-0.5 w-6 rounded-full bg-brand-dark transition-transform"></span>
-          <span class="block h-0.5 w-6 rounded-full bg-brand-dark transition-transform"></span>
+        <button id="menu-btn" class="flex flex-col gap-1.5 p-1 md:hidden" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="block h-0.5 w-6 rounded-full bg-brand-dark transition-transform" aria-hidden="true"></span>
+          <span class="block h-0.5 w-6 rounded-full bg-brand-dark transition-transform" aria-hidden="true"></span>
+          <span class="block h-0.5 w-6 rounded-full bg-brand-dark transition-transform" aria-hidden="true"></span>
         </button>
       </div>
     </div>
@@ -270,550 +326,552 @@
   <div id="mobile-overlay" class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm hidden md:hidden" aria-hidden="true"></div>
 
   <!-- Mobile Nav Sidebar -->
-  <nav id="mobile-nav" class="fixed inset-y-0 right-0 z-50 w-80 max-w-[85vw] bg-white shadow-2xl flex flex-col translate-x-full md:hidden" aria-label="Menu mobile">
+  <nav id="mobile-nav" class="fixed inset-y-0 right-0 z-50 w-80 max-w-[85vw] bg-white shadow-2xl flex flex-col translate-x-full md:hidden" aria-label="Menu de navegação mobile">
     <div class="flex items-center justify-between p-5 border-b border-slate-100">
-      <img src="assets/Odonto-Coser (1).webp" alt="Odonto Coser" class="h-9 w-auto">
+      <img src="assets/Odonto-Coser (1).webp" alt="Odonto Coser" width="250" height="65" class="h-9 w-auto">
       <button id="menu-close" class="flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-brand-dark hover:bg-brand-light transition-colors" aria-label="Fechar menu">
-        <i class="fa-solid fa-xmark text-lg"></i>
+        <i class="fa-solid fa-xmark text-lg" aria-hidden="true"></i>
       </button>
     </div>
     <div class="flex flex-col gap-1 p-4 flex-1 overflow-y-auto">
       <a href="#especialidades" class="flex items-center gap-3 rounded-xl px-4 py-3.5 text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-primary transition-all">
-        <i class="fa-solid fa-tooth w-5 text-brand-primary"></i>Especialidades
+        <i class="fa-solid fa-tooth w-5 text-brand-primary" aria-hidden="true"></i>Especialidades
       </a>
       <a href="#quem-somos" class="flex items-center gap-3 rounded-xl px-4 py-3.5 text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-primary transition-all">
-        <i class="fa-solid fa-user-doctor w-5 text-brand-primary"></i>Quem somos
+        <i class="fa-solid fa-user-doctor w-5 text-brand-primary" aria-hidden="true"></i>Quem somos
       </a>
       <a href="#localizacao" class="flex items-center gap-3 rounded-xl px-4 py-3.5 text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-primary transition-all">
-        <i class="fa-solid fa-location-dot w-5 text-brand-primary"></i>Localização
+        <i class="fa-solid fa-location-dot w-5 text-brand-primary" aria-hidden="true"></i>Localização
       </a>
       <a href="#contato" class="flex items-center gap-3 rounded-xl px-4 py-3.5 text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-primary transition-all">
-        <i class="fa-solid fa-phone w-5 text-brand-primary"></i>Contato
+        <i class="fa-solid fa-phone w-5 text-brand-primary" aria-hidden="true"></i>Contato
       </a>
     </div>
     <div class="p-5 border-t border-slate-100">
       <a href="https://wa.me/5541992159233" class="btn-primary w-full" target="_blank" rel="noopener noreferrer">
-        <i class="fa-brands fa-whatsapp text-lg"></i>
+        <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
         Agendar Consulta
       </a>
     </div>
   </nav>
 
-  <!-- ═══════════════ HERO ═══════════════ -->
-  <section id="inicio" class="relative overflow-hidden bg-gradient-to-br from-[#e0f4fa] via-[#f0f9fc] to-white pt-32 lg:pt-40">
-    <div class="pointer-events-none absolute inset-y-0 right-0 w-[60%] overflow-hidden max-md:w-full max-md:opacity-30">
-      <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-6-300x213.webp" alt="" aria-hidden="true" class="h-full w-full object-cover opacity-15 [mask-image:linear-gradient(to_left,rgba(255,255,255,1),transparent_90%)] mix-blend-luminosity">
-    </div>
+  <main id="conteudo-principal">
 
-    <div class="section-container relative grid grid-cols-1 items-end gap-12 md:grid-cols-2">
-      <div class="z-10 pb-16 md:pb-24 max-md:text-center md:pr-10">
-        <div class="hero-badge inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-sm border border-slate-100 mb-6 max-md:mx-auto" data-aos="fade-down" data-aos-duration="600">
-          <span class="flex h-2 w-2 rounded-full bg-brand-primary animate-pulse"></span>
-          <span class="text-xs font-bold tracking-widest text-brand-dark uppercase">Odonto Coser Clínica</span>
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <section id="inicio" class="relative overflow-hidden bg-gradient-to-br from-[#e0f4fa] via-[#f0f9fc] to-white pt-32 lg:pt-40" aria-labelledby="hero-heading">
+      <div class="pointer-events-none absolute inset-y-0 right-0 w-[60%] overflow-hidden max-md:w-full max-md:opacity-30" aria-hidden="true">
+        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-6-300x213.webp" alt="" width="300" height="213" class="h-full w-full object-cover opacity-15 [mask-image:linear-gradient(to_left,rgba(255,255,255,1),transparent_90%)] mix-blend-luminosity">
+      </div>
+
+      <div class="section-container relative grid grid-cols-1 items-end gap-12 md:grid-cols-2">
+        <div class="z-10 pb-16 md:pb-24 max-md:text-center md:pr-10">
+          <div class="hero-badge inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-sm border border-slate-100 mb-6 max-md:mx-auto" data-aos="fade-down" data-aos-duration="600">
+            <span class="flex h-2 w-2 rounded-full bg-brand-primary animate-pulse" aria-hidden="true"></span>
+            <span class="text-xs font-bold tracking-widest text-brand-dark uppercase">Odonto Coser Clínica</span>
+          </div>
+
+          <h1 id="hero-heading" class="font-serif text-5xl font-bold leading-[1.1] tracking-tight text-brand-dark sm:text-6xl lg:text-7xl" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
+            Sorriso <span class="text-brand-primary italic">Saudável,</span><br>Vida Feliz.
+          </h1>
+
+          <p class="mt-8 text-xl font-semibold text-slate-800" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">Especialistas em Odontologia em Araucária</p>
+          <p class="mt-4 max-w-lg text-base leading-relaxed text-slate-500 max-md:mx-auto" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+            Com 35 anos de experiência e mais de 13.000 clientes atendidos, oferecemos cuidados dentários de alta qualidade em uma estrutura de luxo.
+          </p>
+
+          <div class="mt-10 flex flex-col items-center gap-6 sm:flex-row max-md:justify-center" data-aos="fade-up" data-aos-duration="700" data-aos-delay="400">
+            <a href="https://wa.me/5541992159233" class="btn-primary w-full sm:w-auto" target="_blank" rel="noopener noreferrer" aria-label="Agendar avaliação gratuita pelo WhatsApp">
+              <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
+              Agendar Avaliação Grátis
+            </a>
+            <img src="assets/google-reviews.webp" alt="Odonto Coser com avaliação 4.7 estrelas no Google" width="371" height="50" class="h-10 w-auto opacity-90 transition-opacity hover:opacity-100">
+          </div>
         </div>
 
-        <h1 class="font-serif text-5xl font-bold leading-[1.1] tracking-tight text-brand-dark sm:text-6xl lg:text-7xl" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
-          Sorriso <span class="text-brand-primary italic">Saudável,</span><br>Vida Feliz.
-        </h1>
+        <div class="z-10 flex justify-center items-end relative pt-10 lg:pt-0" data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
+          <div class="absolute inset-0 bg-brand-primary/10 rounded-full blur-3xl transform scale-75" aria-hidden="true"></div>
+          <img src="assets/Leonardo-Coser.webp" alt="Dr. Leonardo Coser — Cirurgião-Dentista da Odonto Coser" width="450" height="674" class="relative max-h-[580px] w-auto object-contain object-bottom drop-shadow-2xl max-md:max-h-[400px] transition-transform duration-700 hover:scale-105">
+        </div>
+      </div>
+    </section>
 
-        <h2 class="mt-8 text-xl font-semibold text-slate-800" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">Especialistas em Odontologia em Araucária</h2>
-        <p class="mt-4 max-w-lg text-base leading-relaxed text-slate-500 max-md:mx-auto" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
-          Com 35 anos de experiência e mais de 13.000 clientes atendidos, oferecemos cuidados dentários de alta qualidade em uma estrutura de luxo.
-        </p>
+    <!-- ═══════════════ INFO BAR ═══════════════ -->
+    <div class="bg-brand-dark py-4 text-white shadow-inner relative z-20" role="complementary" aria-label="Informações de contato rápido">
+      <div class="section-container grid grid-cols-1 items-center gap-6 text-center lg:grid-cols-[1fr_1fr_1.5fr] lg:text-left">
+        <div class="flex items-center justify-center gap-3 text-sm font-semibold tracking-wide lg:justify-start">
+          <i class="fa-solid fa-phone info-icon text-brand-primary text-lg" aria-hidden="true"></i>
+          <span>(41) 3642-1476 / 99215-9233</span>
+        </div>
+        <div class="flex items-center justify-center gap-3 text-sm font-semibold tracking-wide lg:justify-start border-y border-slate-700 py-3 lg:border-y-0 lg:border-x lg:py-0 lg:px-6">
+          <i class="fa-solid fa-user-doctor info-icon text-brand-primary text-lg" aria-hidden="true"></i>
+          <span>Dr. Leonardo Coser</span>
+        </div>
+        <div class="flex items-center justify-center gap-3 text-xs font-semibold leading-snug lg:justify-start text-slate-300">
+          <span>Odonto Coser — Especialistas em Odontologia em Araucária</span>
+        </div>
+      </div>
+    </div>
 
-        <div class="mt-10 flex flex-col items-center gap-6 sm:flex-row max-md:justify-center" data-aos="fade-up" data-aos-duration="700" data-aos-delay="400">
-          <a href="https://wa.me/5541992159233" class="btn-primary w-full sm:w-auto" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-whatsapp text-lg"></i>
-            Agendar Avaliação
+    <!-- ═══════════════ STATS ═══════════════ -->
+    <section class="bg-white py-16 border-b border-slate-100" aria-label="Números da clínica">
+      <div class="section-container grid grid-cols-2 gap-6 md:grid-cols-4">
+        <div class="stat-box text-center rounded-2xl bg-brand-light p-8" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="0">
+          <i class="fa-solid fa-calendar-days text-3xl text-brand-primary mb-3 block" aria-hidden="true"></i>
+          <div class="text-4xl font-bold font-serif text-brand-dark">35+</div>
+          <div class="text-sm font-semibold text-slate-500 mt-1">Anos de experiência</div>
+        </div>
+        <div class="stat-box text-center rounded-2xl bg-brand-light p-8" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="100">
+          <i class="fa-solid fa-face-smile text-3xl text-brand-primary mb-3 block" aria-hidden="true"></i>
+          <div class="text-4xl font-bold font-serif text-brand-dark">13mil+</div>
+          <div class="text-sm font-semibold text-slate-500 mt-1">Clientes atendidos</div>
+        </div>
+        <div class="stat-box text-center rounded-2xl bg-brand-light p-8" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
+          <i class="fa-solid fa-tooth text-3xl text-brand-primary mb-3 block" aria-hidden="true"></i>
+          <div class="text-4xl font-bold font-serif text-brand-dark">12</div>
+          <div class="text-sm font-semibold text-slate-500 mt-1">Especialidades</div>
+        </div>
+        <div class="stat-box text-center rounded-2xl bg-brand-light p-8" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300">
+          <i class="fa-solid fa-star text-3xl text-brand-primary mb-3 block" aria-hidden="true"></i>
+          <div class="text-4xl font-bold font-serif text-brand-dark">4.7</div>
+          <div class="text-sm font-semibold text-slate-500 mt-1">Nota no Google</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ TRATAMENTOS ═══════════════ -->
+    <section id="tratamentos" class="bg-white py-24 lg:py-32 relative overflow-hidden" aria-labelledby="tratamentos-heading">
+      <div class="absolute top-0 left-0 w-64 h-64 bg-brand-light rounded-full mix-blend-multiply filter blur-3xl opacity-50 -translate-x-1/2 -translate-y-1/2" aria-hidden="true"></div>
+      <div class="section-container grid grid-cols-1 items-center gap-16 lg:gap-24 lg:grid-cols-2 relative z-10">
+        <div class="order-2 lg:order-1 relative" data-aos="fade-right" data-aos-duration="800">
+          <div class="absolute -inset-4 bg-brand-light rounded-[2.5rem] transform -rotate-3 z-0 transition-transform duration-500 hover:rotate-0" aria-hidden="true"></div>
+          <div class="img-hover-zoom rounded-3xl relative z-10 shadow-[0_20px_50px_rgba(26,61,92,0.1)]">
+            <img src="assets/Odonto-Coser-Clinica-Araucaria.webp" alt="Antes e depois de tratamentos realizados na Odonto Coser em Araucária" width="576" height="326" loading="lazy" class="w-full rounded-3xl">
+          </div>
+        </div>
+        <div class="order-1 lg:order-2" data-aos="fade-left" data-aos-duration="800">
+          <span class="text-brand-primary font-bold tracking-widest text-sm uppercase mb-3 block">Nossa Missão</span>
+          <h2 id="tratamentos-heading" class="font-serif text-4xl font-bold leading-tight text-brand-dark sm:text-5xl">Cuidados personalizados e <span class="text-brand-primary italic">sorrisos transformados</span></h2>
+          <div class="mt-8 space-y-5 text-base leading-relaxed text-slate-600">
+            <p>Na clínica Odonto Coser, acreditamos na transformação completa do seu sorriso.</p>
+            <p>Oferecemos tratamentos personalizados, utilizando tecnologias avançadas e equipamentos de ponta para garantir a sua saúde e também a beleza do seu sorriso.</p>
+            <p>Buscamos compreender as necessidades individuais de cada paciente, oferecemos tratamentos individualizados para resolver as suas dores específicas.</p>
+            <p class="font-medium text-slate-800 border-l-4 border-brand-primary pl-4 bg-brand-light/50 py-3 rounded-r-xl">Aqui nosso resultado é duradouro, transformamos o seu sorriso e a sua face, mantendo a sua essência e naturalidade.</p>
+          </div>
+          <a href="https://wa.me/5541992159233" class="btn-primary mt-10 w-full sm:w-auto" target="_blank" rel="noopener noreferrer" aria-label="Falar com um especialista da Odonto Coser pelo WhatsApp">
+            <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
+            Falar com um Especialista
           </a>
-          <img src="assets/google-reviews.webp" alt="4.7 estrelas no Google" class="h-10 w-auto opacity-90 transition-opacity hover:opacity-100">
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ ESPECIALIDADES ═══════════════ -->
+    <section id="especialidades" class="relative bg-brand-dark py-24 lg:py-32 overflow-hidden" aria-labelledby="especialidades-heading">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-brand-primary/5 rounded-full blur-3xl" aria-hidden="true"></div>
+      <div class="absolute bottom-0 left-0 w-64 h-64 bg-brand-primary/5 rounded-full blur-3xl" aria-hidden="true"></div>
+      <div class="section-container relative z-10">
+        <header class="mb-16 text-center" data-aos="fade-up" data-aos-duration="700">
+          <span class="text-brand-primary font-bold tracking-widest text-sm uppercase mb-3 block"><i class="fa-solid fa-stethoscope mr-2" aria-hidden="true"></i>Nossos Tratamentos</span>
+          <h2 id="especialidades-heading" class="font-serif text-4xl font-bold text-white sm:text-5xl">Especialidades</h2>
+          <p class="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-300">Nossa clínica conta com especialistas que atuam em diversas áreas. Seja para harmonizar, embelezar, ou tirar seu mal estar, a Odonto Coser está de portas abertas, sempre pronta para te receber.</p>
+        </header>
+
+        <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 list-none" role="list">
+
+          <li class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
+            <div class="relative z-10">
+              <i class="fa-solid fa-wand-sparkles specialty-icon-fa mb-5 block" aria-hidden="true"></i>
+              <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Harmonização Orofacial</h3>
+              <p class="text-sm leading-relaxed text-slate-400">Bichectomia, Toxina Botulínica, Lipo de Papada, Fios de Sustentação, Preenchimento Facial e Labial.</p>
+            </div>
+          </li>
+
+          <li class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="60">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
+            <div class="relative z-10">
+              <i class="fa-solid fa-gem specialty-icon-fa mb-5 block" aria-hidden="true"></i>
+              <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Facetas e Lentes</h3>
+              <p class="text-sm leading-relaxed text-slate-400">Camadas ultrafinas de porcelana ou resina para recobrir manchas, harmonizar o sorriso e fechar diastemas.</p>
+            </div>
+          </li>
+
+          <li class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="120">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
+            <div class="relative z-10">
+              <i class="fa-solid fa-screwdriver-wrench specialty-icon-fa mb-5 block" aria-hidden="true"></i>
+              <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Implantes Dentários</h3>
+              <p class="text-sm leading-relaxed text-slate-400">Chega de sofrer com a perda de dentes! Os implantes são a melhor ferramenta para repor dentes, unindo estética e funcionalidade.</p>
+            </div>
+          </li>
+
+          <li class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="180">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
+            <div class="relative z-10">
+              <i class="fa-solid fa-arrows-spin specialty-icon-fa mb-5 block" aria-hidden="true"></i>
+              <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Ortodontia Convencional</h3>
+              <p class="text-sm leading-relaxed text-slate-400">Responsável pela correção da posição dos ossos maxilares e dos dentes posicionados de maneira incorreta.</p>
+            </div>
+          </li>
+
+          <li class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="240">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
+            <div class="relative z-10">
+              <i class="fa-regular fa-sun specialty-icon-fa mb-5 block" aria-hidden="true"></i>
+              <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Clareamento Dental</h3>
+              <p class="text-sm leading-relaxed text-slate-400">Trabalhamos com todos os tipos de clareamento: De Consultório (Laser), Caseiro e misto.</p>
+            </div>
+          </li>
+
+          <li class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
+            <div class="relative z-10">
+              <i class="fa-solid fa-shield-heart specialty-icon-fa mb-5 block" aria-hidden="true"></i>
+              <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Endodontia <span class="text-xs font-medium text-brand-primary block mt-1">(Tratamento de Canal)</span></h3>
+              <p class="text-sm leading-relaxed text-slate-400">Indicado quando o dente sofre algum trauma: cáries profundas, fraturas, inflamação e infecção da polpa.</p>
+            </div>
+          </li>
+
+          <li class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="360">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
+            <div class="relative z-10">
+              <i class="fa-regular fa-eye specialty-icon-fa mb-5 block" aria-hidden="true"></i>
+              <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Alinhadores Invisíveis</h3>
+              <p class="text-sm leading-relaxed text-slate-400">Placas transparentes, estéticas e removíveis que corrigem os dentes dispensando os aparelhos tradicionais.</p>
+            </div>
+          </li>
+
+          <li class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="420">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
+            <div class="relative z-10">
+              <i class="fa-solid fa-layer-group specialty-icon-fa mb-5 block" aria-hidden="true"></i>
+              <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Enxertos e Reabilitações</h3>
+              <p class="text-sm leading-relaxed text-slate-400">Técnicas modernas utilizadas para ganho em espessura ou altura óssea. Indicado para pacientes com deficiência óssea.</p>
+            </div>
+          </li>
+
+          <li class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="480">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
+            <div class="relative z-10">
+              <i class="fa-solid fa-bolt specialty-icon-fa mb-5 block" aria-hidden="true"></i>
+              <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Tratamento de DTM</h3>
+              <p class="text-sm leading-relaxed text-slate-400">Condição que afeta as articulações da boca e os músculos da mandíbula. A DTM é conhecida como dor orofacial.</p>
+            </div>
+          </li>
+
+          <li class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="540">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
+            <div class="relative z-10">
+              <i class="fa-solid fa-baby specialty-icon-fa mb-5 block" aria-hidden="true"></i>
+              <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Odontopediatria</h3>
+              <p class="text-sm leading-relaxed text-slate-400">Especialidade que cuida da saúde bucal de crianças, desde o nascimento até a adolescência.</p>
+            </div>
+          </li>
+
+          <li class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
+            <div class="relative z-10">
+              <i class="fa-solid fa-cubes specialty-icon-fa mb-5 block" aria-hidden="true"></i>
+              <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Próteses Convencionais</h3>
+              <p class="text-sm leading-relaxed text-slate-400">Prótese Total, Parcial Removível, Fixa sobre dente, Fixa sobre implantes e Provisórias.</p>
+            </div>
+          </li>
+
+          <li class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="660">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
+            <div class="relative z-10">
+              <i class="fa-solid fa-heart-pulse specialty-icon-fa mb-5 block" aria-hidden="true"></i>
+              <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Periodontia e Dentística</h3>
+              <p class="text-sm leading-relaxed text-slate-400">Prevenção de complicações gengivais e ósseas. Odontologia restauradora focada na estética e função.</p>
+            </div>
+          </li>
+
+        </ul>
+
+        <div class="mt-16 text-center" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
+          <a href="https://wa.me/5541992159233" class="btn-outline" target="_blank" rel="noopener noreferrer" aria-label="Solicitar orçamento pelo WhatsApp">
+            <i class="fa-solid fa-file-invoice-dollar" aria-hidden="true"></i>
+            Solicitar Orçamento
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ GALERIA — CARROSSEL DUPLO ═══════════════ -->
+    <section id="galeria" class="bg-brand-dark py-20 overflow-hidden" aria-labelledby="galeria-heading">
+      <div class="mb-10 text-center" data-aos="fade-up" data-aos-duration="600">
+        <span class="text-brand-primary font-bold tracking-widest text-sm uppercase mb-3 block"><i class="fa-solid fa-images mr-2" aria-hidden="true"></i>Nossa Clínica</span>
+        <h2 id="galeria-heading" class="font-serif text-3xl font-bold text-white">Conheça nossa estrutura</h2>
+      </div>
+
+      <!-- Track 1 — esquerda -->
+      <div class="carousel-outer mb-4" aria-hidden="true">
+        <div class="carousel-track carousel-left">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-1-300x213.webp" alt="Recepção da Odonto Coser" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-2-300x213.webp" alt="Sala de atendimento da Odonto Coser" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-3-300x213.webp" alt="Consultório odontológico equipado" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-4-300x213.webp" alt="Estrutura moderna da Odonto Coser" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-5-300x213.webp" alt="Equipamentos odontológicos de ponta" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-6-300x213.webp" alt="Ambiente da clínica Odonto Coser" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-7-300x213.webp" alt="Sala de espera da Odonto Coser" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-8-300x213.webp" alt="Consultório odontológico Odonto Coser" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-9-300x213.webp" alt="Área de atendimento da clínica" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria.webp" alt="Fachada principal da Odonto Coser em Araucária" width="448" height="307" loading="lazy">
+          <!-- duplicatas para loop infinito -->
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-1-300x213.webp" alt="Recepção da Odonto Coser" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-2-300x213.webp" alt="Sala de atendimento da Odonto Coser" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-3-300x213.webp" alt="Consultório odontológico equipado" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-4-300x213.webp" alt="Estrutura moderna da Odonto Coser" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-5-300x213.webp" alt="Equipamentos odontológicos de ponta" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-6-300x213.webp" alt="Ambiente da clínica Odonto Coser" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-7-300x213.webp" alt="Sala de espera da Odonto Coser" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-8-300x213.webp" alt="Consultório odontológico Odonto Coser" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-9-300x213.webp" alt="Área de atendimento da clínica" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria.webp" alt="Fachada principal da Odonto Coser em Araucária" width="448" height="307" loading="lazy">
         </div>
       </div>
 
-      <div class="z-10 flex justify-center items-end relative pt-10 lg:pt-0" data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
-        <div class="absolute inset-0 bg-brand-primary/10 rounded-full blur-3xl transform scale-75"></div>
-        <img src="assets/Leonardo-Coser.webp" alt="Dr. Leonardo Coser" class="relative max-h-[580px] w-auto object-contain object-bottom drop-shadow-2xl max-md:max-h-[400px] transition-transform duration-700 hover:scale-105">
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ INFO BAR ═══════════════ -->
-  <div class="bg-brand-dark py-4 text-white shadow-inner relative z-20">
-    <div class="section-container grid grid-cols-1 items-center gap-6 text-center lg:grid-cols-[1fr_1fr_1.5fr] lg:text-left">
-      <div class="flex items-center justify-center gap-3 text-sm font-semibold tracking-wide lg:justify-start">
-        <i class="fa-solid fa-phone info-icon text-brand-primary text-lg"></i>
-        <span>(41) 3642-1476 / 99215-9233</span>
-      </div>
-      <div class="flex items-center justify-center gap-3 text-sm font-semibold tracking-wide lg:justify-start border-y border-slate-700 py-3 lg:border-y-0 lg:border-x lg:py-0 lg:px-6">
-        <i class="fa-solid fa-user-doctor info-icon text-brand-primary text-lg"></i>
-        <span>Dr. Leonardo Coser</span>
-      </div>
-      <div class="flex items-center justify-center gap-3 text-xs font-semibold leading-snug lg:justify-start text-slate-300">
-        <span>Odonto Coser - Especialistas em Odontologia em Araucária</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══════════════ STATS ═══════════════ -->
-  <section class="bg-white py-16 border-b border-slate-100">
-    <div class="section-container grid grid-cols-2 gap-6 md:grid-cols-4">
-      <div class="stat-box text-center rounded-2xl bg-brand-light p-8" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="0">
-        <i class="fa-solid fa-calendar-days text-3xl text-brand-primary mb-3 block"></i>
-        <div class="text-4xl font-bold font-serif text-brand-dark">35+</div>
-        <div class="text-sm font-semibold text-slate-500 mt-1">Anos de experiência</div>
-      </div>
-      <div class="stat-box text-center rounded-2xl bg-brand-light p-8" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="100">
-        <i class="fa-solid fa-face-smile text-3xl text-brand-primary mb-3 block"></i>
-        <div class="text-4xl font-bold font-serif text-brand-dark">13mil+</div>
-        <div class="text-sm font-semibold text-slate-500 mt-1">Clientes atendidos</div>
-      </div>
-      <div class="stat-box text-center rounded-2xl bg-brand-light p-8" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
-        <i class="fa-solid fa-tooth text-3xl text-brand-primary mb-3 block"></i>
-        <div class="text-4xl font-bold font-serif text-brand-dark">12</div>
-        <div class="text-sm font-semibold text-slate-500 mt-1">Especialidades</div>
-      </div>
-      <div class="stat-box text-center rounded-2xl bg-brand-light p-8" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300">
-        <i class="fa-solid fa-star text-3xl text-brand-primary mb-3 block"></i>
-        <div class="text-4xl font-bold font-serif text-brand-dark">4.7</div>
-        <div class="text-sm font-semibold text-slate-500 mt-1">Nota no Google</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ TRATAMENTOS ═══════════════ -->
-  <section id="tratamentos" class="bg-white py-24 lg:py-32 relative overflow-hidden">
-    <div class="absolute top-0 left-0 w-64 h-64 bg-brand-light rounded-full mix-blend-multiply filter blur-3xl opacity-50 -translate-x-1/2 -translate-y-1/2"></div>
-    <div class="section-container grid grid-cols-1 items-center gap-16 lg:gap-24 lg:grid-cols-2 relative z-10">
-      <div class="order-2 lg:order-1 relative" data-aos="fade-right" data-aos-duration="800">
-        <div class="absolute -inset-4 bg-brand-light rounded-[2.5rem] transform -rotate-3 z-0 transition-transform duration-500 hover:rotate-0"></div>
-        <div class="img-hover-zoom rounded-3xl relative z-10 shadow-[0_20px_50px_rgba(26,61,92,0.1)]">
-          <img src="assets/Odonto-Coser-Clinica-Araucaria.webp" alt="Transformações de sorrisos na Odonto Coser" class="w-full rounded-3xl">
+      <!-- Track 2 — direita -->
+      <div class="carousel-outer" aria-hidden="true">
+        <div class="carousel-track carousel-right">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-10-300x213.webp" alt="Centro cirúrgico da Odonto Coser" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-11-300x213.webp" alt="Sala de raio-x digital da clínica" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-12-300x213.webp" alt="Estúdio fotográfico odontológico" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-13-300x213.webp" alt="Cadeiras odontológicas modernas" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-14-300x213.webp" alt="Área de esterilização da Odonto Coser" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-15-300x213.webp" alt="Corredor da clínica Odonto Coser" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-16-300x213.webp" alt="Sala de procedimentos Odonto Coser" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-17-300x213.webp" alt="Detalhes do consultório odontológico" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-18-300x213.webp" alt="Estrutura de atendimento da clínica" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-1.webp" alt="Entrada da Odonto Coser em Araucária" width="448" height="307" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Araucaria.webp" alt="Vista da clínica Odonto Coser em Araucária-PR" width="576" height="326" loading="lazy">
+          <!-- duplicatas -->
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-10-300x213.webp" alt="Centro cirúrgico da Odonto Coser" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-11-300x213.webp" alt="Sala de raio-x digital da clínica" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-12-300x213.webp" alt="Estúdio fotográfico odontológico" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-13-300x213.webp" alt="Cadeiras odontológicas modernas" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-14-300x213.webp" alt="Área de esterilização da Odonto Coser" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-15-300x213.webp" alt="Corredor da clínica Odonto Coser" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-16-300x213.webp" alt="Sala de procedimentos Odonto Coser" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-17-300x213.webp" alt="Detalhes do consultório odontológico" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-18-300x213.webp" alt="Estrutura de atendimento da clínica" width="300" height="213" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-1.webp" alt="Entrada da Odonto Coser em Araucária" width="448" height="307" loading="lazy">
+          <img src="assets/Odonto-Coser-Clinica-Araucaria.webp" alt="Vista da clínica Odonto Coser em Araucária-PR" width="576" height="326" loading="lazy">
         </div>
       </div>
-      <div class="order-1 lg:order-2" data-aos="fade-left" data-aos-duration="800">
-        <span class="text-brand-primary font-bold tracking-widest text-sm uppercase mb-3 block">Nossa Missão</span>
-        <h2 class="font-serif text-4xl font-bold leading-tight text-brand-dark sm:text-5xl">Cuidados personalizados e <span class="text-brand-primary italic">sorrisos transformados</span></h2>
-        <div class="mt-8 space-y-5 text-base leading-relaxed text-slate-600">
-          <p>Na clínica Odonto Coser, acreditamos na transformação completa do seu sorriso.</p>
-          <p>Oferecemos tratamentos personalizados, utilizando tecnologias avançadas e equipamentos de ponta para garantir a sua saúde e também a beleza do seu sorriso.</p>
-          <p>Buscamos compreender as necessidades individuais de cada paciente, oferecemos tratamentos individualizados para resolver as suas dores específicas.</p>
-          <p class="font-medium text-slate-800 border-l-4 border-brand-primary pl-4 bg-brand-light/50 py-3 rounded-r-xl">Aqui nosso resultado é duradouro, transformamos o seu sorriso e a sua face, mantendo a sua essência e naturalidade.</p>
-        </div>
-        <a href="https://wa.me/5541992159233" class="btn-primary mt-10 w-full sm:w-auto" target="_blank" rel="noopener noreferrer">
-          <i class="fa-brands fa-whatsapp text-lg"></i>
-          Falar com um Especialista
-        </a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══════════════ ESPECIALIDADES ═══════════════ -->
-  <section id="especialidades" class="relative bg-brand-dark py-24 lg:py-32 overflow-hidden">
-    <div class="absolute top-0 right-0 w-96 h-96 bg-brand-primary/5 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 left-0 w-64 h-64 bg-brand-primary/5 rounded-full blur-3xl"></div>
-    <div class="section-container relative z-10">
-      <div class="mb-16 text-center" data-aos="fade-up" data-aos-duration="700">
-        <span class="text-brand-primary font-bold tracking-widest text-sm uppercase mb-3 block"><i class="fa-solid fa-stethoscope mr-2"></i>Nossos Tratamentos</span>
-        <h2 class="font-serif text-4xl font-bold text-white sm:text-5xl">Especialidades</h2>
-        <p class="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-300">Nossa clínica conta com especialistas que atuam em diversas áreas. Seja para harmonizar, embelezar, ou tirar seu mal estar, a Odonto Coser está de portas abertas, sempre pronta para te receber.</p>
-      </div>
-
-      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-
-        <article class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0">
-          <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div class="relative z-10">
-            <i class="fa-solid fa-wand-sparkles specialty-icon-fa mb-5 block"></i>
-            <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Harmonização Orofacial</h3>
-            <p class="text-sm leading-relaxed text-slate-400">Bichectomia, Toxina Botulínica, Lipo de Papada, Fios de Sustentação, Preenchimento Facial e Labial.</p>
+    <!-- ═══════════════ QUEM SOMOS ═══════════════ -->
+    <section id="quem-somos" class="bg-slate-50 py-24 lg:py-32 overflow-hidden" aria-labelledby="quem-somos-heading">
+      <div class="section-container grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+        <div class="order-2 lg:order-1 relative" data-aos="fade-right" data-aos-duration="800">
+          <div class="relative rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(26,61,92,0.1)] border-8 border-white img-hover-zoom">
+            <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria.webp" alt="Fachada da clínica Odonto Coser em Araucária-PR" width="448" height="307" loading="lazy" class="w-full h-auto">
           </div>
-        </article>
-
-        <article class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="60">
-          <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div class="relative z-10">
-            <i class="fa-solid fa-gem specialty-icon-fa mb-5 block"></i>
-            <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Facetas e Lentes</h3>
-            <p class="text-sm leading-relaxed text-slate-400">Camadas ultrafinas de porcelana ou resina para recobrir manchas, harmonizar o sorriso e fechar diastemas.</p>
+          <div class="absolute -bottom-10 -right-10 w-[55%] rounded-2xl border-8 border-slate-50 shadow-2xl overflow-hidden img-hover-zoom max-md:hidden">
+            <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-1.webp" alt="Entrada principal da Odonto Coser" width="448" height="307" loading="lazy" class="w-full h-auto">
           </div>
-        </article>
-
-        <article class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="120">
-          <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div class="relative z-10">
-            <i class="fa-solid fa-screwdriver-wrench specialty-icon-fa mb-5 block"></i>
-            <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Implantes Dentários</h3>
-            <p class="text-sm leading-relaxed text-slate-400">Chega de sofrer com a perda de dentes! Os implantes são a melhor ferramenta para repor dentes, unindo estética e funcionalidade.</p>
-          </div>
-        </article>
-
-        <article class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="180">
-          <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div class="relative z-10">
-            <i class="fa-solid fa-arrows-spin specialty-icon-fa mb-5 block"></i>
-            <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Ortodontia Convencional</h3>
-            <p class="text-sm leading-relaxed text-slate-400">Responsável pela correção da posição dos ossos maxilares e dos dentes posicionados de maneira incorreta.</p>
-          </div>
-        </article>
-
-        <article class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="240">
-          <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div class="relative z-10">
-            <i class="fa-regular fa-sun specialty-icon-fa mb-5 block"></i>
-            <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Clareamento Dental</h3>
-            <p class="text-sm leading-relaxed text-slate-400">Trabalhamos com todos os tipos de clareamento: De Consultório (Laser), Caseiro e misto.</p>
-          </div>
-        </article>
-
-        <article class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
-          <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div class="relative z-10">
-            <i class="fa-solid fa-shield-heart specialty-icon-fa mb-5 block"></i>
-            <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Endodontia <span class="text-xs font-medium text-brand-primary block mt-1">(Tratamento de Canal)</span></h3>
-            <p class="text-sm leading-relaxed text-slate-400">Indicado quando o dente sofre algum trauma: cáries profundas, fraturas, inflamação e infecção da polpa.</p>
-          </div>
-        </article>
-
-        <article class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="360">
-          <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div class="relative z-10">
-            <i class="fa-regular fa-eye specialty-icon-fa mb-5 block"></i>
-            <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Alinhadores Invisíveis</h3>
-            <p class="text-sm leading-relaxed text-slate-400">Placas transparentes, estéticas e removíveis que corrigem os dentes dispensando os aparelhos tradicionais.</p>
-          </div>
-        </article>
-
-        <article class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="420">
-          <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div class="relative z-10">
-            <i class="fa-solid fa-layer-group specialty-icon-fa mb-5 block"></i>
-            <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Enxertos e Reabilitações</h3>
-            <p class="text-sm leading-relaxed text-slate-400">Técnicas modernas utilizadas para ganho em espessura ou altura óssea. Indicado para pacientes com deficiência óssea.</p>
-          </div>
-        </article>
-
-        <article class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="480">
-          <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div class="relative z-10">
-            <i class="fa-solid fa-bolt specialty-icon-fa mb-5 block"></i>
-            <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Tratamento de DTM</h3>
-            <p class="text-sm leading-relaxed text-slate-400">Condição que afeta as articulações da boca e os músculos da mandíbula. A DTM é conhecida como dor orofacial.</p>
-          </div>
-        </article>
-
-        <article class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="540">
-          <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div class="relative z-10">
-            <i class="fa-solid fa-baby specialty-icon-fa mb-5 block"></i>
-            <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Odontopediatria</h3>
-            <p class="text-sm leading-relaxed text-slate-400">Especialidade que cuida da saúde bucal de crianças, desde o nascimento até a adolescência.</p>
-          </div>
-        </article>
-
-        <article class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
-          <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div class="relative z-10">
-            <i class="fa-solid fa-cubes specialty-icon-fa mb-5 block"></i>
-            <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Próteses Convencionais</h3>
-            <p class="text-sm leading-relaxed text-slate-400">Prótese Total, Parcial Removível, Fixa sobre dente, Fixa sobre implantes e Provisórias.</p>
-          </div>
-        </article>
-
-        <article class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="660">
-          <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div class="relative z-10">
-            <i class="fa-solid fa-heart-pulse specialty-icon-fa mb-5 block"></i>
-            <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Periodontia e Dentística</h3>
-            <p class="text-sm leading-relaxed text-slate-400">Prevenção de complicações gengivais e ósseas. Odontologia restauradora focada na estética e função.</p>
-          </div>
-        </article>
-
-      </div>
-
-      <div class="mt-16 text-center" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
-        <a href="https://wa.me/5541992159233" class="btn-outline" target="_blank" rel="noopener noreferrer">
-          <i class="fa-solid fa-file-invoice-dollar"></i>
-          Solicitar Orçamento
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ GALERIA — CARROSSEL DUPLO ═══════════════ -->
-  <section id="galeria" class="bg-brand-dark py-20 overflow-hidden">
-    <div class="mb-10 text-center" data-aos="fade-up" data-aos-duration="600">
-      <span class="text-brand-primary font-bold tracking-widest text-sm uppercase mb-3 block"><i class="fa-solid fa-images mr-2"></i>Nossa Clínica</span>
-      <h2 class="font-serif text-3xl font-bold text-white">Conheça nossa estrutura</h2>
-    </div>
-
-    <!-- Track 1 — esquerda -->
-    <div class="carousel-outer mb-4">
-      <div class="carousel-track carousel-left">
-        <!-- Set 1 -->
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-1-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-2-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-3-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-4-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-5-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-6-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-7-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-8-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-9-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria.webp" alt="Clínica Odonto Coser">
-        <!-- Set 2 (duplicate) -->
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-1-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-2-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-3-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-4-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-5-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-6-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-7-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-8-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-9-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria.webp" alt="Clínica Odonto Coser">
-      </div>
-    </div>
-
-    <!-- Track 2 — direita -->
-    <div class="carousel-outer">
-      <div class="carousel-track carousel-right">
-        <!-- Set 1 -->
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-10-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-11-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-12-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-13-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-14-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-15-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-16-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-17-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-18-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-1.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Araucaria.webp" alt="Clínica Odonto Coser">
-        <!-- Set 2 (duplicate) -->
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-10-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-11-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-12-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-13-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-14-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-15-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-16-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-17-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-18-300x213.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-1.webp" alt="Clínica Odonto Coser">
-        <img src="assets/Odonto-Coser-Clinica-Araucaria.webp" alt="Clínica Odonto Coser">
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ QUEM SOMOS ═══════════════ -->
-  <section id="quem-somos" class="bg-slate-50 py-24 lg:py-32 overflow-hidden">
-    <div class="section-container grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-      <div class="order-2 lg:order-1 relative" data-aos="fade-right" data-aos-duration="800">
-        <div class="relative rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(26,61,92,0.1)] border-8 border-white img-hover-zoom">
-          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria.webp" alt="Fachada da clínica Odonto Coser" class="w-full h-auto">
-        </div>
-        <div class="absolute -bottom-10 -right-10 w-[55%] rounded-2xl border-8 border-slate-50 shadow-2xl overflow-hidden img-hover-zoom max-md:hidden">
-          <img src="assets/Odonto-Coser-Clinica-Odontologica-de-Araucaria-1.webp" alt="Entrada da clínica" class="w-full h-auto">
-        </div>
-      </div>
-
-      <div class="order-1 lg:order-2 lg:pl-10" data-aos="fade-left" data-aos-duration="800">
-        <div class="mb-8">
-          <span class="text-brand-primary font-bold tracking-widest text-sm uppercase mb-3 block"><i class="fa-solid fa-award mr-2"></i>Tradição e Tecnologia</span>
-          <h2 class="font-serif text-4xl font-bold text-brand-dark sm:text-5xl">Quem somos</h2>
         </div>
 
-        <div class="prose prose-slate prose-lg">
+        <div class="order-1 lg:order-2 lg:pl-10" data-aos="fade-left" data-aos-duration="800">
+          <div class="mb-8">
+            <span class="text-brand-primary font-bold tracking-widest text-sm uppercase mb-3 block"><i class="fa-solid fa-award mr-2" aria-hidden="true"></i>Tradição e Tecnologia</span>
+            <h2 id="quem-somos-heading" class="font-serif text-4xl font-bold text-brand-dark sm:text-5xl">Quem somos</h2>
+          </div>
+
           <p class="text-slate-600 leading-relaxed mb-6">Localizada no centro de Araucária, a Clínica Odonto Coser cuida do seu sorriso e da sua saúde desde 1989. Contamos com uma equipe familiar formada por profissionais altamente qualificados, totalmente dedicados ao seu bem-estar.</p>
           <p class="text-slate-600 leading-relaxed mb-8">Nossa estrutura é altamente tecnológica: possuímos um centro cirúrgico para grandes intervenções, raio-x digital, sala com estúdio fotográfico de ponta e mais de 07 cadeiras odontológicas. Além disso, dispomos de uma equipe médica especializada em sedação geral, proporcionando o máximo de conforto nas cirurgias de grande porte.</p>
-        </div>
 
-        <div class="flex items-center gap-4 mb-8 p-4 rounded-xl bg-brand-light/60 border border-brand-primary/20" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200">
-          <i class="fa-solid fa-certificate text-3xl text-brand-primary"></i>
-          <div>
-            <div class="font-bold text-brand-dark text-sm">CRO registrado e certificado</div>
-            <div class="text-xs text-slate-500">Qualidade e segurança garantidas</div>
+          <div class="flex items-center gap-4 mb-8 p-4 rounded-xl bg-brand-light/60 border border-brand-primary/20" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200">
+            <i class="fa-solid fa-certificate text-3xl text-brand-primary" aria-hidden="true"></i>
+            <div>
+              <div class="font-bold text-brand-dark text-sm">CRO registrado e certificado</div>
+              <div class="text-xs text-slate-500">Qualidade e segurança garantidas</div>
+            </div>
           </div>
+
+          <img src="assets/Odonto-Coser (1).webp" alt="Logo Odonto Coser" width="250" height="65" loading="lazy" class="mb-8 h-12 w-auto opacity-80 transition-all hover:opacity-100 hover:scale-105">
+
+          <a href="https://wa.me/5541992159233" class="btn-primary w-full sm:w-auto" target="_blank" rel="noopener noreferrer" aria-label="Conhecer a clínica Odonto Coser pelo WhatsApp">
+            <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
+            Conhecer a Clínica
+          </a>
         </div>
-
-        <img src="assets/Odonto-Coser (1).webp" alt="Odonto Coser" class="mb-8 h-12 w-auto opacity-80 transition-all hover:opacity-100 hover:scale-105">
-
-        <a href="https://wa.me/5541992159233" class="btn-primary w-full sm:w-auto" target="_blank" rel="noopener noreferrer">
-          <i class="fa-brands fa-whatsapp text-lg"></i>
-          Conhecer a Clínica
-        </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══════════════ DEPOIMENTOS ═══════════════ -->
-  <section id="depoimentos" class="bg-brand-light py-24 lg:py-32 relative overflow-hidden">
-    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brand-primary/10 blur-3xl pointer-events-none"></div>
-    <div class="absolute bottom-0 left-0 -ml-20 w-64 h-64 rounded-full bg-brand-dark/5 blur-3xl pointer-events-none"></div>
+    <!-- ═══════════════ DEPOIMENTOS ═══════════════ -->
+    <section id="depoimentos" class="bg-brand-light py-24 lg:py-32 relative overflow-hidden" aria-labelledby="depoimentos-heading">
+      <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brand-primary/10 blur-3xl pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute bottom-0 left-0 -ml-20 w-64 h-64 rounded-full bg-brand-dark/5 blur-3xl pointer-events-none" aria-hidden="true"></div>
 
-    <div class="section-container mb-16 text-center relative z-10" data-aos="fade-up" data-aos-duration="700">
-      <span class="text-brand-primary font-bold tracking-widest text-sm uppercase mb-3 block"><i class="fa-solid fa-comments mr-2"></i>Experiências Reais</span>
-      <h2 class="font-serif text-4xl font-bold text-brand-dark sm:text-5xl">Sorrindo à Toa</h2>
-      <p class="mx-auto mt-6 max-w-2xl text-lg text-slate-600">É muito gratificante para nós saber que, com o nosso trabalho, mudamos não só sorrisos, mas vidas inteiras!</p>
-    </div>
-
-    <div class="relative mx-auto max-w-5xl px-6 lg:px-8 z-10" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="100">
-      <div id="testimonials-carousel" class="relative overflow-hidden rounded-3xl bg-white shadow-[0_20px_50px_rgba(26,61,92,0.07)] border border-slate-100 p-8 md:p-12">
-        <div id="testimonials-track" class="flex transition-transform duration-500 ease-in-out">
-
-          <article class="min-w-full shrink-0 px-4 md:px-10 text-center">
-            <div class="star-row text-yellow-400 text-2xl mb-6">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p class="font-serif text-xl md:text-2xl italic leading-relaxed text-slate-700 mb-8">"Excelente atendimento! A equipe é muito profissional e atenciosa. Meu sorriso ficou incrível após o tratamento com implantes. Recomendo a todos!"</p>
-            <div class="flex items-center justify-center gap-4">
-              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-brand-dark text-lg font-bold text-brand-primary">M</div>
-              <div class="text-left">
-                <strong class="block text-brand-dark font-bold">Maria Silva</strong>
-                <span class="text-sm text-slate-500"><i class="fa-solid fa-circle-check text-brand-primary mr-1"></i>Paciente</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="min-w-full shrink-0 px-4 md:px-10 text-center">
-            <div class="star-row text-yellow-400 text-2xl mb-6">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p class="font-serif text-xl md:text-2xl italic leading-relaxed text-slate-700 mb-8">"Clínica de referência em Araucária. Fiz clareamento dental e o resultado superou minhas expectativas. Ambiente moderno e equipe muito qualificada."</p>
-            <div class="flex items-center justify-center gap-4">
-              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-brand-dark text-lg font-bold text-brand-primary">J</div>
-              <div class="text-left">
-                <strong class="block text-brand-dark font-bold">João Pereira</strong>
-                <span class="text-sm text-slate-500"><i class="fa-solid fa-circle-check text-brand-primary mr-1"></i>Paciente</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="min-w-full shrink-0 px-4 md:px-10 text-center">
-            <div class="star-row text-yellow-400 text-2xl mb-6">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p class="font-serif text-xl md:text-2xl italic leading-relaxed text-slate-700 mb-8">"Levei meu filho para odontopediatria e foi uma experiência maravilhosa. A Dra. foi super paciente e carinhosa. Clínica completa e bem estruturada."</p>
-            <div class="flex items-center justify-center gap-4">
-              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-brand-dark text-lg font-bold text-brand-primary">A</div>
-              <div class="text-left">
-                <strong class="block text-brand-dark font-bold">Ana Costa</strong>
-                <span class="text-sm text-slate-500"><i class="fa-solid fa-circle-check text-brand-primary mr-1"></i>Paciente</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="min-w-full shrink-0 px-4 md:px-10 text-center">
-            <div class="star-row text-yellow-400 text-2xl mb-6">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p class="font-serif text-xl md:text-2xl italic leading-relaxed text-slate-700 mb-8">"Fiz harmonização orofacial e ficou natural, exatamente como eu queria. Dr. Leonardo Coser é um profissional excepcional. Nota 10!"</p>
-            <div class="flex items-center justify-center gap-4">
-              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-brand-dark text-lg font-bold text-brand-primary">R</div>
-              <div class="text-left">
-                <strong class="block text-brand-dark font-bold">Roberto Lima</strong>
-                <span class="text-sm text-slate-500"><i class="fa-solid fa-circle-check text-brand-primary mr-1"></i>Paciente</span>
-              </div>
-            </div>
-          </article>
-
-        </div>
-
-        <button id="carousel-prev" class="absolute left-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-brand-dark shadow-md transition-all hover:bg-brand-primary hover:text-white hover:scale-110" aria-label="Depoimento anterior">
-          <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <button id="carousel-next" class="absolute right-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-brand-dark shadow-md transition-all hover:bg-brand-primary hover:text-white hover:scale-110" aria-label="Próximo depoimento">
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
+      <div class="section-container mb-16 text-center relative z-10" data-aos="fade-up" data-aos-duration="700">
+        <span class="text-brand-primary font-bold tracking-widest text-sm uppercase mb-3 block"><i class="fa-solid fa-comments mr-2" aria-hidden="true"></i>Experiências Reais</span>
+        <h2 id="depoimentos-heading" class="font-serif text-4xl font-bold text-brand-dark sm:text-5xl">Sorrindo à Toa</h2>
+        <p class="mx-auto mt-6 max-w-2xl text-lg text-slate-600">É muito gratificante para nós saber que, com o nosso trabalho, mudamos não só sorrisos, mas vidas inteiras!</p>
       </div>
-    </div>
-  </section>
 
-  <!-- ═══════════════ FAQ ═══════════════ -->
-  <section id="faq" class="bg-white py-20">
-    <div class="section-container">
-      <div class="mb-10 text-center" data-aos="fade-up" data-aos-duration="600">
-        <span class="text-brand-primary font-bold tracking-widest text-sm uppercase mb-3 block"><i class="fa-solid fa-circle-question mr-2"></i>Dúvidas</span>
-        <h2 class="font-serif text-3xl font-bold text-brand-dark sm:text-4xl">FAQ — Perguntas frequentes</h2>
-      </div>
-      <div class="mx-auto max-w-3xl" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+      <div class="relative mx-auto max-w-5xl px-6 lg:px-8 z-10" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="100">
+        <div id="testimonials-carousel" class="relative overflow-hidden rounded-3xl bg-white shadow-[0_20px_50px_rgba(26,61,92,0.07)] border border-slate-100 p-8 md:p-12" role="region" aria-label="Carrossel de depoimentos" aria-live="polite">
+          <div id="testimonials-track" class="flex transition-transform duration-500 ease-in-out">
 
-        <div class="faq-item is-active border-b border-gray-200 group">
-          <button class="faq-question flex w-full items-center justify-between gap-4 py-5 text-left text-sm font-semibold text-brand-dark transition-colors hover:text-brand-primary" aria-expanded="true">
-            <span><i class="fa-solid fa-credit-card text-brand-primary mr-3"></i>Quais as formas de pagamento vocês aceitam?</span>
-            <span class="faq-icon-plus h-6 w-6 shrink-0 fill-brand-primary transition-transform"><svg viewBox="0 0 24 24"><path d="m11 11h-7.25c-.414 0-.75.336-.75.75s.336.75.75.75h7.25v7.25c0 .414.336.75.75.75s.75-.336.75-.75v-7.25h7.25c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-7.25v-7.25c0-.414-.336-.75-.75-.75s-.75.336-.75.75z"/></svg></span>
-            <span class="faq-icon-minus hidden h-6 w-6 shrink-0 fill-brand-primary"><svg viewBox="0 0 24 24"><path d="m21 11.75c0-.414-.336-.75-.75-.75h-16.5c-.414 0-.75.336-.75.75s.336.75.75.75h16.5c.414 0 .75-.336.75-.75z"/></svg></span>
+            <article class="min-w-full shrink-0 px-4 md:px-10 text-center">
+              <div class="star-row text-yellow-400 text-2xl mb-6" aria-label="5 estrelas">
+                <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+              </div>
+              <blockquote class="font-serif text-xl md:text-2xl italic leading-relaxed text-slate-700 mb-8">"Excelente atendimento! A equipe é muito profissional e atenciosa. Meu sorriso ficou incrível após o tratamento com implantes. Recomendo a todos!"</blockquote>
+              <footer class="flex items-center justify-center gap-4">
+                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-brand-dark text-lg font-bold text-brand-primary" aria-hidden="true">M</div>
+                <div class="text-left">
+                  <cite class="not-italic block text-brand-dark font-bold">Maria Silva</cite>
+                  <span class="text-sm text-slate-500"><i class="fa-solid fa-circle-check text-brand-primary mr-1" aria-hidden="true"></i>Paciente</span>
+                </div>
+              </footer>
+            </article>
+
+            <article class="min-w-full shrink-0 px-4 md:px-10 text-center">
+              <div class="star-row text-yellow-400 text-2xl mb-6" aria-label="5 estrelas">
+                <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+              </div>
+              <blockquote class="font-serif text-xl md:text-2xl italic leading-relaxed text-slate-700 mb-8">"Clínica de referência em Araucária. Fiz clareamento dental e o resultado superou minhas expectativas. Ambiente moderno e equipe muito qualificada."</blockquote>
+              <footer class="flex items-center justify-center gap-4">
+                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-brand-dark text-lg font-bold text-brand-primary" aria-hidden="true">J</div>
+                <div class="text-left">
+                  <cite class="not-italic block text-brand-dark font-bold">João Pereira</cite>
+                  <span class="text-sm text-slate-500"><i class="fa-solid fa-circle-check text-brand-primary mr-1" aria-hidden="true"></i>Paciente</span>
+                </div>
+              </footer>
+            </article>
+
+            <article class="min-w-full shrink-0 px-4 md:px-10 text-center">
+              <div class="star-row text-yellow-400 text-2xl mb-6" aria-label="5 estrelas">
+                <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+              </div>
+              <blockquote class="font-serif text-xl md:text-2xl italic leading-relaxed text-slate-700 mb-8">"Levei meu filho para odontopediatria e foi uma experiência maravilhosa. A Dra. foi super paciente e carinhosa. Clínica completa e bem estruturada."</blockquote>
+              <footer class="flex items-center justify-center gap-4">
+                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-brand-dark text-lg font-bold text-brand-primary" aria-hidden="true">A</div>
+                <div class="text-left">
+                  <cite class="not-italic block text-brand-dark font-bold">Ana Costa</cite>
+                  <span class="text-sm text-slate-500"><i class="fa-solid fa-circle-check text-brand-primary mr-1" aria-hidden="true"></i>Paciente</span>
+                </div>
+              </footer>
+            </article>
+
+            <article class="min-w-full shrink-0 px-4 md:px-10 text-center">
+              <div class="star-row text-yellow-400 text-2xl mb-6" aria-label="5 estrelas">
+                <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+              </div>
+              <blockquote class="font-serif text-xl md:text-2xl italic leading-relaxed text-slate-700 mb-8">"Fiz harmonização orofacial e ficou natural, exatamente como eu queria. Dr. Leonardo Coser é um profissional excepcional. Nota 10!"</blockquote>
+              <footer class="flex items-center justify-center gap-4">
+                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-brand-dark text-lg font-bold text-brand-primary" aria-hidden="true">R</div>
+                <div class="text-left">
+                  <cite class="not-italic block text-brand-dark font-bold">Roberto Lima</cite>
+                  <span class="text-sm text-slate-500"><i class="fa-solid fa-circle-check text-brand-primary mr-1" aria-hidden="true"></i>Paciente</span>
+                </div>
+              </footer>
+            </article>
+
+          </div>
+
+          <button id="carousel-prev" class="absolute left-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-brand-dark shadow-md transition-all hover:bg-brand-primary hover:text-white hover:scale-110" aria-label="Ver depoimento anterior">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
           </button>
-          <div class="faq-answer"><div class="overflow-hidden"><p class="pb-5 text-sm leading-relaxed text-slate-600 pl-8">Consulte nossas condições via WhatsApp, ou agendando uma avaliação aqui na nossa clínica!</p></div></div>
-        </div>
-
-        <div class="faq-item border-b border-gray-200 group">
-          <button class="faq-question flex w-full items-center justify-between gap-4 py-5 text-left text-sm font-semibold text-brand-dark transition-colors hover:text-brand-primary" aria-expanded="false">
-            <span><i class="fa-solid fa-id-card text-brand-primary mr-3"></i>Quais convênios a clínica aceita?</span>
-            <span class="faq-icon-plus h-6 w-6 shrink-0 fill-brand-primary"><svg viewBox="0 0 24 24"><path d="m11 11h-7.25c-.414 0-.75.336-.75.75s.336.75.75.75h7.25v7.25c0 .414.336.75.75.75s.75-.336.75-.75v-7.25h7.25c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-7.25v-7.25c0-.414-.336-.75-.75-.75s-.75.336-.75.75z"/></svg></span>
-            <span class="faq-icon-minus hidden h-6 w-6 shrink-0 fill-brand-primary"><svg viewBox="0 0 24 24"><path d="m21 11.75c0-.414-.336-.75-.75-.75h-16.5c-.414 0-.75.336-.75.75s.336.75.75.75h16.5c.414 0 .75-.336.75-.75z"/></svg></span>
+          <button id="carousel-next" class="absolute right-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-brand-dark shadow-md transition-all hover:bg-brand-primary hover:text-white hover:scale-110" aria-label="Ver próximo depoimento">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
           </button>
-          <div class="faq-answer"><div class="overflow-hidden"><p class="pb-5 text-sm leading-relaxed text-slate-600 pl-8">A clínica trabalha com <strong>Amil</strong>, <strong>Sulamerica</strong>, <strong>Medprev</strong>, <strong>Solumedi</strong>, <strong>Uniodonto</strong>, <strong>Global Saúde</strong> e <strong>Brazil Dental</strong>.</p></div></div>
         </div>
-
-        <div class="faq-item border-b border-gray-200 group">
-          <button class="faq-question flex w-full items-center justify-between gap-4 py-5 text-left text-sm font-semibold text-brand-dark transition-colors hover:text-brand-primary" aria-expanded="false">
-            <span><i class="fa-solid fa-wheelchair text-brand-primary mr-3"></i>A clínica possui acessibilidade para pessoas com deficiência?</span>
-            <span class="faq-icon-plus h-6 w-6 shrink-0 fill-brand-primary"><svg viewBox="0 0 24 24"><path d="m11 11h-7.25c-.414 0-.75.336-.75.75s.336.75.75.75h7.25v7.25c0 .414.336.75.75.75s.75-.336.75-.75v-7.25h7.25c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-7.25v-7.25c0-.414-.336-.75-.75-.75s-.75.336-.75.75z"/></svg></span>
-            <span class="faq-icon-minus hidden h-6 w-6 shrink-0 fill-brand-primary"><svg viewBox="0 0 24 24"><path d="m21 11.75c0-.414-.336-.75-.75-.75h-16.5c-.414 0-.75.336-.75.75s.336.75.75.75h16.5c.414 0 .75-.336.75-.75z"/></svg></span>
-          </button>
-          <div class="faq-answer"><div class="overflow-hidden"><p class="pb-5 text-sm leading-relaxed text-slate-600 pl-8">Sim, possuímos estrutura adequada para cadeirantes e pessoas com qualquer dificuldade.</p></div></div>
-        </div>
-
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- ═══════════════ FAQ ═══════════════ -->
+    <section id="faq" class="bg-white py-20" aria-labelledby="faq-heading">
+      <div class="section-container">
+        <div class="mb-10 text-center" data-aos="fade-up" data-aos-duration="600">
+          <span class="text-brand-primary font-bold tracking-widest text-sm uppercase mb-3 block"><i class="fa-solid fa-circle-question mr-2" aria-hidden="true"></i>Dúvidas</span>
+          <h2 id="faq-heading" class="font-serif text-3xl font-bold text-brand-dark sm:text-4xl">Perguntas Frequentes</h2>
+        </div>
+        <div class="mx-auto max-w-3xl" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+
+          <div class="faq-item is-active border-b border-gray-200">
+            <button class="faq-question flex w-full items-center justify-between gap-4 py-5 text-left text-sm font-semibold text-brand-dark transition-colors hover:text-brand-primary" aria-expanded="true" aria-controls="faq-answer-1">
+              <span><i class="fa-solid fa-credit-card text-brand-primary mr-3" aria-hidden="true"></i>Quais as formas de pagamento vocês aceitam?</span>
+              <span class="faq-icon-plus h-6 w-6 shrink-0 fill-brand-primary" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m11 11h-7.25c-.414 0-.75.336-.75.75s.336.75.75.75h7.25v7.25c0 .414.336.75.75.75s.75-.336.75-.75v-7.25h7.25c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-7.25v-7.25c0-.414-.336-.75-.75-.75s-.75.336-.75.75z"/></svg></span>
+              <span class="faq-icon-minus hidden h-6 w-6 shrink-0 fill-brand-primary" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m21 11.75c0-.414-.336-.75-.75-.75h-16.5c-.414 0-.75.336-.75.75s.336.75.75.75h16.5c.414 0 .75-.336.75-.75z"/></svg></span>
+            </button>
+            <div id="faq-answer-1" class="faq-answer"><div class="overflow-hidden"><p class="pb-5 text-sm leading-relaxed text-slate-600 pl-8">Consulte nossas condições via WhatsApp, ou agendando uma avaliação aqui na nossa clínica!</p></div></div>
+          </div>
+
+          <div class="faq-item border-b border-gray-200">
+            <button class="faq-question flex w-full items-center justify-between gap-4 py-5 text-left text-sm font-semibold text-brand-dark transition-colors hover:text-brand-primary" aria-expanded="false" aria-controls="faq-answer-2">
+              <span><i class="fa-solid fa-id-card text-brand-primary mr-3" aria-hidden="true"></i>Quais convênios a clínica aceita?</span>
+              <span class="faq-icon-plus h-6 w-6 shrink-0 fill-brand-primary" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m11 11h-7.25c-.414 0-.75.336-.75.75s.336.75.75.75h7.25v7.25c0 .414.336.75.75.75s.75-.336.75-.75v-7.25h7.25c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-7.25v-7.25c0-.414-.336-.75-.75-.75s-.75.336-.75.75z"/></svg></span>
+              <span class="faq-icon-minus hidden h-6 w-6 shrink-0 fill-brand-primary" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m21 11.75c0-.414-.336-.75-.75-.75h-16.5c-.414 0-.75.336-.75.75s.336.75.75.75h16.5c.414 0 .75-.336.75-.75z"/></svg></span>
+            </button>
+            <div id="faq-answer-2" class="faq-answer"><div class="overflow-hidden"><p class="pb-5 text-sm leading-relaxed text-slate-600 pl-8">A clínica trabalha com <strong>Amil</strong>, <strong>Sulamerica</strong>, <strong>Medprev</strong>, <strong>Solumedi</strong>, <strong>Uniodonto</strong>, <strong>Global Saúde</strong> e <strong>Brazil Dental</strong>.</p></div></div>
+          </div>
+
+          <div class="faq-item border-b border-gray-200">
+            <button class="faq-question flex w-full items-center justify-between gap-4 py-5 text-left text-sm font-semibold text-brand-dark transition-colors hover:text-brand-primary" aria-expanded="false" aria-controls="faq-answer-3">
+              <span><i class="fa-solid fa-wheelchair text-brand-primary mr-3" aria-hidden="true"></i>A clínica possui acessibilidade para pessoas com deficiência?</span>
+              <span class="faq-icon-plus h-6 w-6 shrink-0 fill-brand-primary" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m11 11h-7.25c-.414 0-.75.336-.75.75s.336.75.75.75h7.25v7.25c0 .414.336.75.75.75s.75-.336.75-.75v-7.25h7.25c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-7.25v-7.25c0-.414-.336-.75-.75-.75s-.75.336-.75.75z"/></svg></span>
+              <span class="faq-icon-minus hidden h-6 w-6 shrink-0 fill-brand-primary" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m21 11.75c0-.414-.336-.75-.75-.75h-16.5c-.414 0-.75.336-.75.75s.336.75.75.75h16.5c.414 0 .75-.336.75-.75z"/></svg></span>
+            </button>
+            <div id="faq-answer-3" class="faq-answer"><div class="overflow-hidden"><p class="pb-5 text-sm leading-relaxed text-slate-600 pl-8">Sim, possuímos estrutura adequada para cadeirantes e pessoas com qualquer dificuldade.</p></div></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <!-- ═══════════════ FOOTER / CONTATO ═══════════════ -->
-  <footer id="contato" class="bg-brand-dark pt-20 border-t border-brand-dark/90">
+  <footer id="contato" class="bg-brand-dark pt-20 border-t border-brand-dark/90" role="contentinfo">
     <div class="section-container grid grid-cols-1 gap-12 pb-16 lg:grid-cols-[1fr_1.5fr]">
       <div class="text-white" data-aos="fade-right" data-aos-duration="700">
         <h2 class="font-serif text-3xl font-bold mb-8 text-white flex items-center gap-3">
-          <i class="fa-solid fa-headset text-brand-primary"></i>
+          <i class="fa-solid fa-headset text-brand-primary" aria-hidden="true"></i>
           Contato
         </h2>
-        <ul class="space-y-4 text-base text-slate-300">
-          <li class="contact-row flex items-start gap-4">
-            <i class="fa-solid fa-location-dot mt-1 text-brand-primary text-xl shrink-0"></i>
-            <span>R. Paulo Alves Pinto, 585 - Centro<br>Araucária - PR, 83702-240</span>
-          </li>
-          <li class="contact-row flex items-start gap-4">
-            <i class="fa-solid fa-phone mt-1 text-brand-primary text-xl shrink-0"></i>
-            <span>(41) 3642-1476<br>(41) 99215-9233</span>
-          </li>
-          <li class="contact-row flex items-start gap-4">
-            <i class="fa-solid fa-envelope mt-1 text-brand-primary text-xl shrink-0"></i>
-            <a href="mailto:odontocoser@hotmail.com" class="hover:text-white transition-colors">odontocoser@hotmail.com</a>
-          </li>
-          <li class="contact-row flex items-start gap-4">
-            <i class="fa-brands fa-whatsapp mt-1 text-brand-primary text-xl shrink-0"></i>
-            <a href="https://wa.me/5541992159233" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">(41) 99215-9233 — WhatsApp</a>
-          </li>
-        </ul>
+        <address class="not-italic">
+          <ul class="space-y-4 text-base text-slate-300">
+            <li class="contact-row flex items-start gap-4">
+              <i class="fa-solid fa-location-dot mt-1 text-brand-primary text-xl shrink-0" aria-hidden="true"></i>
+              <span>R. Paulo Alves Pinto, 585 - Centro<br>Araucária - PR, 83702-240</span>
+            </li>
+            <li class="contact-row flex items-start gap-4">
+              <i class="fa-solid fa-phone mt-1 text-brand-primary text-xl shrink-0" aria-hidden="true"></i>
+              <span><a href="tel:+554136421476" class="hover:text-white transition-colors">(41) 3642-1476</a><br><a href="tel:+5541992159233" class="hover:text-white transition-colors">(41) 99215-9233</a></span>
+            </li>
+            <li class="contact-row flex items-start gap-4">
+              <i class="fa-solid fa-envelope mt-1 text-brand-primary text-xl shrink-0" aria-hidden="true"></i>
+              <a href="mailto:odontocoser@hotmail.com" class="hover:text-white transition-colors">odontocoser@hotmail.com</a>
+            </li>
+            <li class="contact-row flex items-start gap-4">
+              <i class="fa-brands fa-whatsapp mt-1 text-brand-primary text-xl shrink-0" aria-hidden="true"></i>
+              <a href="https://wa.me/5541992159233" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">(41) 99215-9233 — WhatsApp</a>
+            </li>
+          </ul>
+        </address>
 
         <div class="mt-10 pt-10 border-t border-slate-700">
           <h3 class="mb-4 font-bold text-white tracking-wide uppercase text-sm flex items-center gap-2">
-            <i class="fa-regular fa-clock text-brand-primary"></i>
+            <i class="fa-regular fa-clock text-brand-primary" aria-hidden="true"></i>
             Horário de atendimento
           </h3>
           <p class="text-slate-400 mb-2">Segunda a Sexta: 08:00 às 19:00<br>Sábado: Sob Consulta</p>
-          <p class="text-xs font-semibold text-brand-primary mt-4"><i class="fa-solid fa-triangle-exclamation mr-1"></i>Emergências e feriados exclusivamente pelo número: (41) 99215-9233</p>
+          <p class="text-xs font-semibold text-brand-primary mt-4"><i class="fa-solid fa-triangle-exclamation mr-1" aria-hidden="true"></i>Emergências e feriados exclusivamente pelo número: <a href="tel:+5541992159233" class="hover:text-white transition-colors">(41) 99215-9233</a></p>
         </div>
 
         <div class="mt-8 flex gap-4">
-          <a href="https://wa.me/5541992159233" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-brand-primary hover:scale-110" aria-label="WhatsApp">
-            <i class="fa-brands fa-whatsapp"></i>
+          <a href="https://wa.me/5541992159233" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-brand-primary hover:scale-110" aria-label="Odonto Coser no WhatsApp">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
           </a>
-          <a href="https://www.instagram.com/odontocoser" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-brand-primary hover:scale-110" aria-label="Instagram">
-            <i class="fa-brands fa-instagram"></i>
+          <a href="https://www.instagram.com/odontocoser" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-brand-primary hover:scale-110" aria-label="Odonto Coser no Instagram">
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
           </a>
-          <a href="https://www.facebook.com/odontocoser" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-brand-primary hover:scale-110" aria-label="Facebook">
-            <i class="fa-brands fa-facebook-f"></i>
+          <a href="https://www.facebook.com/odontocoser" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-brand-primary hover:scale-110" aria-label="Odonto Coser no Facebook">
+            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
           </a>
         </div>
       </div>
@@ -825,14 +883,14 @@
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          title="Localização Odonto Coser no Google Maps">
+          title="Localização da Clínica Odonto Coser no mapa — R. Paulo Alves Pinto, 585, Araucária-PR">
         </iframe>
       </div>
     </div>
 
     <div class="bg-[#112a41] py-6 text-center text-xs font-medium tracking-wide text-slate-400">
       <div class="section-container flex flex-col md:flex-row justify-between items-center gap-4">
-        <p><i class="fa-regular fa-copyright mr-1"></i>Odonto Coser 2026 | Todos os direitos reservados</p>
+        <p><i class="fa-regular fa-copyright mr-1" aria-hidden="true"></i>Odonto Coser 2026 | Todos os direitos reservados</p>
         <p>Desenvolvido por <a href="https://conceitop.com.br/" target="_blank" rel="noopener noreferrer" class="font-bold text-brand-primary hover:text-white transition-colors">Conceito Prime</a></p>
       </div>
     </div>
