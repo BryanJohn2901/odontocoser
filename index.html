@@ -95,6 +95,7 @@
 
   <!-- AOS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/reviews-carousel.css">
 
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -124,6 +125,7 @@
       .section-container { @apply max-w-7xl mx-auto px-6 lg:px-8; }
       .btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-primary px-8 py-4 text-sm font-bold text-white shadow-[0_8px_20px_rgba(42,159,212,0.35)] relative overflow-hidden transition-shadow; }
       .btn-primary-sm { @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-primary px-6 py-2.5 text-sm font-bold text-white shadow-lg relative overflow-hidden transition-shadow; }
+      .btn-hero-cta { @apply inline-flex shrink-0 items-center gap-3 rounded-full bg-brand-primary py-3 pl-5 pr-6 text-white shadow-[0_8px_20px_rgba(42,159,212,0.35)] transition-shadow hover:shadow-[0_12px_28px_rgba(42,159,212,0.45)]; }
       .btn-outline { @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-white bg-transparent px-8 py-4 text-sm font-bold text-white relative overflow-hidden transition-all hover:bg-white hover:text-brand-dark; }
       .btn-icon { @apply h-5 w-5 shrink-0; }
     }
@@ -174,6 +176,9 @@
     }
     .btn-primary:hover  { animation: none; transform: translateY(-5px) scale(1.04); box-shadow: 0 16px 32px rgba(42,159,212,0.45); }
     .btn-primary-sm:hover { animation: none; transform: translateY(-3px) scale(1.04); box-shadow: 0 12px 24px rgba(42,159,212,0.4); }
+
+    /* Hero CTA */
+    .hero-social-proof { mix-blend-mode: multiply; filter: contrast(1.05); }
 
     /* btn-outline pulse border */
     .btn-outline { animation: outline-pulse 3s ease-in-out infinite; }
@@ -226,13 +231,25 @@
     .carousel-outer:hover .carousel-left,
     .carousel-outer:hover .carousel-right { animation-play-state: paused; }
 
-    /* ─── Specialty card icon ─── */
-    .specialty-icon-fa {
-      font-size: 2.4rem;
-      color: rgba(255,255,255,0.85);
-      transition: transform 0.4s ease, color 0.3s ease;
+    /* ─── Specialty card icon (originais) ─── */
+    .specialty-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      object-fit: contain;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0.95;
+      transition: transform 0.4s ease, opacity 0.3s ease;
+      mix-blend-mode: lighten;
     }
-    .group:hover .specialty-icon-fa { transform: scale(1.2) rotate(-6deg); color: #2A9FD4; }
+    .group:hover .specialty-icon { transform: scale(1.15); opacity: 1; }
+
+    /* ─── FAQ accordion ─── */
+    .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s ease; }
+    .faq-item.is-active .faq-answer { grid-template-rows: 1fr; }
+    .faq-item.is-active .faq-icon-plus { display: none; }
+    .faq-item.is-active .faq-icon-minus { display: block; }
+    .faq-item:not(.is-active) .faq-icon-minus { display: none; }
 
     /* ─── Info bar icon ─── */
     .info-icon { transition: transform 0.3s ease; display: inline-block; }
@@ -271,21 +288,6 @@
     /* ─── Mobile sidebar nav ─── */
     #mobile-nav { transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1); }
 
-    /* ─── Testimonials mobile fix ─── */
-    @media (max-width: 767px) {
-      #testimonials-carousel { padding-bottom: 80px; }
-      #carousel-prev {
-        top: auto; bottom: 20px;
-        transform: none;
-        left: calc(50% - 52px);
-      }
-      #carousel-next {
-        top: auto; bottom: 20px;
-        transform: none;
-        right: calc(50% - 52px); left: auto;
-      }
-    }
-
     /* ─── AOS ─── */
     [data-aos] { pointer-events: none; }
     [data-aos].aos-animate { pointer-events: auto; }
@@ -309,7 +311,7 @@
         <a href="#contato" class="text-sm font-semibold tracking-wide text-brand-dark transition-colors hover:text-brand-primary">Contato</a>
       </nav>
       <div class="flex items-center gap-6 justify-self-end">
-        <a href="https://wa.me/5541992159233" class="btn-primary-sm max-sm:px-4" target="_blank" rel="noopener noreferrer" aria-label="Agendar consulta pelo WhatsApp">
+        <a href="#" data-wa="general" class="btn-primary-sm max-sm:px-4" target="_blank" rel="noopener noreferrer" aria-label="Agendar consulta pelo WhatsApp">
           <i class="fa-brands fa-whatsapp text-base" aria-hidden="true"></i>
           <span class="max-sm:hidden">Agendar Consulta</span>
         </a>
@@ -348,7 +350,7 @@
       </a>
     </div>
     <div class="p-5 border-t border-slate-100">
-      <a href="https://wa.me/5541992159233" class="btn-primary w-full" target="_blank" rel="noopener noreferrer">
+      <a href="#" data-wa="general" class="btn-primary w-full" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
         Agendar Consulta
       </a>
@@ -379,12 +381,12 @@
             Com 35 anos de experiência e mais de 13.000 clientes atendidos, oferecemos cuidados dentários de alta qualidade em uma estrutura de luxo.
           </p>
 
-          <div class="mt-10 flex flex-col items-center gap-6 sm:flex-row max-md:justify-center" data-aos="fade-up" data-aos-duration="700" data-aos-delay="400">
-            <a href="https://wa.me/5541992159233" class="btn-primary w-full sm:w-auto" target="_blank" rel="noopener noreferrer" aria-label="Agendar avaliação gratuita pelo WhatsApp">
-              <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
-              Agendar Avaliação Grátis
+          <div class="mt-10 flex flex-col items-center gap-4 md:items-start" data-aos="fade-up" data-aos-duration="700" data-aos-delay="400">
+            <a href="#" data-wa="general" class="btn-hero-cta" target="_blank" rel="noopener noreferrer" aria-label="Agendar avaliação gratuita pelo WhatsApp">
+              <i class="fa-brands fa-whatsapp shrink-0 text-[22px] leading-none" aria-hidden="true"></i>
+              <span class="whitespace-nowrap text-sm font-bold">Agendar Avaliação Grátis</span>
             </a>
-            <img src="assets/google-reviews.webp" alt="Odonto Coser com avaliação 4.7 estrelas no Google" width="371" height="50" class="h-10 w-auto opacity-90 transition-opacity hover:opacity-100">
+            <img src="assets/google-reviews.webp" alt="Odonto Coser com avaliação 4.7 estrelas no Google" width="371" height="50" class="hero-social-proof h-10 w-auto">
           </div>
         </div>
 
@@ -457,7 +459,7 @@
             <p>Buscamos compreender as necessidades individuais de cada paciente, oferecemos tratamentos individualizados para resolver as suas dores específicas.</p>
             <p class="font-medium text-slate-800 border-l-4 border-brand-primary pl-4 bg-brand-light/50 py-3 rounded-r-xl">Aqui nosso resultado é duradouro, transformamos o seu sorriso e a sua face, mantendo a sua essência e naturalidade.</p>
           </div>
-          <a href="https://wa.me/5541992159233" class="btn-primary mt-10 w-full sm:w-auto" target="_blank" rel="noopener noreferrer" aria-label="Falar com um especialista da Odonto Coser pelo WhatsApp">
+          <a href="#" data-wa="general" class="btn-primary mt-10 w-full sm:w-auto" target="_blank" rel="noopener noreferrer" aria-label="Falar com um especialista da Odonto Coser pelo WhatsApp">
             <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
             Falar com um Especialista
           </a>
@@ -481,116 +483,152 @@
           <li class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0">
             <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
             <div class="relative z-10">
-              <i class="fa-solid fa-wand-sparkles specialty-icon-fa mb-5 block" aria-hidden="true"></i>
+              <img src="assets/Odonto-Coser-ico1.webp" alt="" width="48" height="48" class="specialty-icon mb-5" aria-hidden="true">
               <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Harmonização Orofacial</h3>
               <p class="text-sm leading-relaxed text-slate-400">Bichectomia, Toxina Botulínica, Lipo de Papada, Fios de Sustentação, Preenchimento Facial e Labial.</p>
+              <a href="#" data-wa-service="Harmonização Orofacial" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold text-white transition-all hover:bg-brand-primary hover:border-brand-primary" aria-label="Saber mais sobre Harmonização Orofacial">
+                <i class="fa-brands fa-whatsapp text-sm" aria-hidden="true"></i>Saber mais
+              </a>
             </div>
           </li>
 
           <li class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="60">
             <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
             <div class="relative z-10">
-              <i class="fa-solid fa-gem specialty-icon-fa mb-5 block" aria-hidden="true"></i>
+              <img src="assets/Odonto-Coser-ico2.webp" alt="" width="48" height="48" class="specialty-icon mb-5" aria-hidden="true">
               <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Facetas e Lentes</h3>
               <p class="text-sm leading-relaxed text-slate-400">Camadas ultrafinas de porcelana ou resina para recobrir manchas, harmonizar o sorriso e fechar diastemas.</p>
+              <a href="#" data-wa-service="Facetas e Lentes" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold text-white transition-all hover:bg-brand-primary hover:border-brand-primary" aria-label="Saber mais sobre Facetas e Lentes">
+                <i class="fa-brands fa-whatsapp text-sm" aria-hidden="true"></i>Saber mais
+              </a>
             </div>
           </li>
 
           <li class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="120">
             <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
             <div class="relative z-10">
-              <i class="fa-solid fa-screwdriver-wrench specialty-icon-fa mb-5 block" aria-hidden="true"></i>
+              <img src="assets/Odonto-Coser-ico3.webp" alt="" width="48" height="48" class="specialty-icon mb-5" aria-hidden="true">
               <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Implantes Dentários</h3>
               <p class="text-sm leading-relaxed text-slate-400">Chega de sofrer com a perda de dentes! Os implantes são a melhor ferramenta para repor dentes, unindo estética e funcionalidade.</p>
+              <a href="#" data-wa-service="Implantes Dentários" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold text-white transition-all hover:bg-brand-primary hover:border-brand-primary" aria-label="Saber mais sobre Implantes Dentários">
+                <i class="fa-brands fa-whatsapp text-sm" aria-hidden="true"></i>Saber mais
+              </a>
             </div>
           </li>
 
           <li class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="180">
             <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
             <div class="relative z-10">
-              <i class="fa-solid fa-arrows-spin specialty-icon-fa mb-5 block" aria-hidden="true"></i>
+              <img src="assets/Odonto-Coser-ico4.webp" alt="" width="48" height="48" class="specialty-icon mb-5" aria-hidden="true">
               <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Ortodontia Convencional</h3>
               <p class="text-sm leading-relaxed text-slate-400">Responsável pela correção da posição dos ossos maxilares e dos dentes posicionados de maneira incorreta.</p>
+              <a href="#" data-wa-service="Ortodontia Convencional" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold text-white transition-all hover:bg-brand-primary hover:border-brand-primary" aria-label="Saber mais sobre Ortodontia Convencional">
+                <i class="fa-brands fa-whatsapp text-sm" aria-hidden="true"></i>Saber mais
+              </a>
             </div>
           </li>
 
           <li class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="240">
             <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
             <div class="relative z-10">
-              <i class="fa-regular fa-sun specialty-icon-fa mb-5 block" aria-hidden="true"></i>
+              <img src="assets/Odonto-Coser-ico5.webp" alt="" width="48" height="48" class="specialty-icon mb-5" aria-hidden="true">
               <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Clareamento Dental</h3>
               <p class="text-sm leading-relaxed text-slate-400">Trabalhamos com todos os tipos de clareamento: De Consultório (Laser), Caseiro e misto.</p>
+              <a href="#" data-wa-service="Clareamento Dental" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold text-white transition-all hover:bg-brand-primary hover:border-brand-primary" aria-label="Saber mais sobre Clareamento Dental">
+                <i class="fa-brands fa-whatsapp text-sm" aria-hidden="true"></i>Saber mais
+              </a>
             </div>
           </li>
 
           <li class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
             <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
             <div class="relative z-10">
-              <i class="fa-solid fa-shield-heart specialty-icon-fa mb-5 block" aria-hidden="true"></i>
+              <img src="assets/Odonto-Coser-ico6.webp" alt="" width="48" height="48" class="specialty-icon mb-5" aria-hidden="true">
               <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Endodontia <span class="text-xs font-medium text-brand-primary block mt-1">(Tratamento de Canal)</span></h3>
               <p class="text-sm leading-relaxed text-slate-400">Indicado quando o dente sofre algum trauma: cáries profundas, fraturas, inflamação e infecção da polpa.</p>
+              <a href="#" data-wa-service="Endodontia" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold text-white transition-all hover:bg-brand-primary hover:border-brand-primary" aria-label="Saber mais sobre Endodontia">
+                <i class="fa-brands fa-whatsapp text-sm" aria-hidden="true"></i>Saber mais
+              </a>
             </div>
           </li>
 
           <li class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="360">
             <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
             <div class="relative z-10">
-              <i class="fa-regular fa-eye specialty-icon-fa mb-5 block" aria-hidden="true"></i>
+              <img src="assets/Odonto-Coser-ico7.webp" alt="" width="48" height="48" class="specialty-icon mb-5" aria-hidden="true">
               <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Alinhadores Invisíveis</h3>
               <p class="text-sm leading-relaxed text-slate-400">Placas transparentes, estéticas e removíveis que corrigem os dentes dispensando os aparelhos tradicionais.</p>
+              <a href="#" data-wa-service="Alinhadores Invisíveis" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold text-white transition-all hover:bg-brand-primary hover:border-brand-primary" aria-label="Saber mais sobre Alinhadores Invisíveis">
+                <i class="fa-brands fa-whatsapp text-sm" aria-hidden="true"></i>Saber mais
+              </a>
             </div>
           </li>
 
           <li class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="420">
             <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
             <div class="relative z-10">
-              <i class="fa-solid fa-layer-group specialty-icon-fa mb-5 block" aria-hidden="true"></i>
+              <img src="assets/Odonto-Coser-ico8.webp" alt="" width="48" height="48" class="specialty-icon mb-5" aria-hidden="true">
               <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Enxertos e Reabilitações</h3>
               <p class="text-sm leading-relaxed text-slate-400">Técnicas modernas utilizadas para ganho em espessura ou altura óssea. Indicado para pacientes com deficiência óssea.</p>
+              <a href="#" data-wa-service="Enxertos e Reabilitações" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold text-white transition-all hover:bg-brand-primary hover:border-brand-primary" aria-label="Saber mais sobre Enxertos e Reabilitações">
+                <i class="fa-brands fa-whatsapp text-sm" aria-hidden="true"></i>Saber mais
+              </a>
             </div>
           </li>
 
           <li class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="480">
             <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
             <div class="relative z-10">
-              <i class="fa-solid fa-bolt specialty-icon-fa mb-5 block" aria-hidden="true"></i>
+              <img src="assets/Odonto-Coser-ico9.webp" alt="" width="48" height="48" class="specialty-icon mb-5" aria-hidden="true">
               <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Tratamento de DTM</h3>
               <p class="text-sm leading-relaxed text-slate-400">Condição que afeta as articulações da boca e os músculos da mandíbula. A DTM é conhecida como dor orofacial.</p>
+              <a href="#" data-wa-service="Tratamento de DTM" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold text-white transition-all hover:bg-brand-primary hover:border-brand-primary" aria-label="Saber mais sobre Tratamento de DTM">
+                <i class="fa-brands fa-whatsapp text-sm" aria-hidden="true"></i>Saber mais
+              </a>
             </div>
           </li>
 
           <li class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="540">
             <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
             <div class="relative z-10">
-              <i class="fa-solid fa-baby specialty-icon-fa mb-5 block" aria-hidden="true"></i>
+              <img src="assets/Odonto-Coser-ico10.webp" alt="" width="48" height="48" class="specialty-icon mb-5" aria-hidden="true">
               <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Odontopediatria</h3>
               <p class="text-sm leading-relaxed text-slate-400">Especialidade que cuida da saúde bucal de crianças, desde o nascimento até a adolescência.</p>
+              <a href="#" data-wa-service="Odontopediatria" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold text-white transition-all hover:bg-brand-primary hover:border-brand-primary" aria-label="Saber mais sobre Odontopediatria">
+                <i class="fa-brands fa-whatsapp text-sm" aria-hidden="true"></i>Saber mais
+              </a>
             </div>
           </li>
 
           <li class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
             <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
             <div class="relative z-10">
-              <i class="fa-solid fa-cubes specialty-icon-fa mb-5 block" aria-hidden="true"></i>
+              <img src="assets/Odonto-Coser-ico11.webp" alt="" width="48" height="48" class="specialty-icon mb-5" aria-hidden="true">
               <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Próteses Convencionais</h3>
               <p class="text-sm leading-relaxed text-slate-400">Prótese Total, Parcial Removível, Fixa sobre dente, Fixa sobre implantes e Provisórias.</p>
+              <a href="#" data-wa-service="Próteses Convencionais" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold text-white transition-all hover:bg-brand-primary hover:border-brand-primary" aria-label="Saber mais sobre Próteses Convencionais">
+                <i class="fa-brands fa-whatsapp text-sm" aria-hidden="true"></i>Saber mais
+              </a>
             </div>
           </li>
 
           <li class="group specialty-card relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.07] hover:border-brand-primary/60 hover:shadow-[0_10px_40px_rgba(42,159,212,0.15)]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="660">
             <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/0 to-brand-primary/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
             <div class="relative z-10">
-              <i class="fa-solid fa-heart-pulse specialty-icon-fa mb-5 block" aria-hidden="true"></i>
+              <img src="assets/Odonto-Coser-ico12.webp" alt="" width="48" height="48" class="specialty-icon mb-5" aria-hidden="true">
               <h3 class="font-serif text-lg font-bold leading-snug text-white mb-3">Periodontia e Dentística</h3>
               <p class="text-sm leading-relaxed text-slate-400">Prevenção de complicações gengivais e ósseas. Odontologia restauradora focada na estética e função.</p>
+              <a href="#" data-wa-service="Periodontia e Dentística" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold text-white transition-all hover:bg-brand-primary hover:border-brand-primary" aria-label="Saber mais sobre Periodontia e Dentística">
+                <i class="fa-brands fa-whatsapp text-sm" aria-hidden="true"></i>Saber mais
+              </a>
             </div>
           </li>
 
         </ul>
 
         <div class="mt-16 text-center" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
-          <a href="https://wa.me/5541992159233" class="btn-outline" target="_blank" rel="noopener noreferrer" aria-label="Solicitar orçamento pelo WhatsApp">
-            <i class="fa-solid fa-file-invoice-dollar" aria-hidden="true"></i>
+          <a href="#" data-wa="general" class="btn-outline" target="_blank" rel="noopener noreferrer" aria-label="Solicitar orçamento pelo WhatsApp">
+            <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
             Solicitar Orçamento
           </a>
         </div>
@@ -692,7 +730,7 @@
 
           <img src="assets/Odonto-Coser (1).webp" alt="Logo Odonto Coser" width="250" height="65" loading="lazy" class="mb-8 h-12 w-auto opacity-80 transition-all hover:opacity-100 hover:scale-105">
 
-          <a href="https://wa.me/5541992159233" class="btn-primary w-full sm:w-auto" target="_blank" rel="noopener noreferrer" aria-label="Conhecer a clínica Odonto Coser pelo WhatsApp">
+          <a href="#" data-wa="general" class="btn-primary w-full sm:w-auto" target="_blank" rel="noopener noreferrer" aria-label="Conhecer a clínica Odonto Coser pelo WhatsApp">
             <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
             Conhecer a Clínica
           </a>
@@ -701,84 +739,40 @@
     </section>
 
     <!-- ═══════════════ DEPOIMENTOS ═══════════════ -->
-    <section id="depoimentos" class="bg-brand-light py-24 lg:py-32 relative overflow-hidden" aria-labelledby="depoimentos-heading">
-      <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brand-primary/10 blur-3xl pointer-events-none" aria-hidden="true"></div>
-      <div class="absolute bottom-0 left-0 -ml-20 w-64 h-64 rounded-full bg-brand-dark/5 blur-3xl pointer-events-none" aria-hidden="true"></div>
+    <section id="depoimentos" class="py-24 bg-brand-light" aria-labelledby="depoimentos-heading">
+      <div class="section-container">
+        <div class="text-center mb-12" data-aos="fade-up" data-aos-duration="700">
+          <span class="text-brand-primary font-bold tracking-widest text-sm uppercase mb-3 block"><i class="fa-solid fa-comments mr-2" aria-hidden="true"></i>Experiências Reais</span>
+          <h2 id="depoimentos-heading" class="font-serif text-4xl font-bold text-brand-dark sm:text-5xl">Sorrindo à Toa</h2>
+          <p class="mx-auto mt-4 max-w-2xl text-slate-600">Com base nas avaliações do Google — mudamos não só sorrisos, mas vidas inteiras!</p>
+        </div>
 
-      <div class="section-container mb-16 text-center relative z-10" data-aos="fade-up" data-aos-duration="700">
-        <span class="text-brand-primary font-bold tracking-widest text-sm uppercase mb-3 block"><i class="fa-solid fa-comments mr-2" aria-hidden="true"></i>Experiências Reais</span>
-        <h2 id="depoimentos-heading" class="font-serif text-4xl font-bold text-brand-dark sm:text-5xl">Sorrindo à Toa</h2>
-        <p class="mx-auto mt-6 max-w-2xl text-lg text-slate-600">É muito gratificante para nós saber que, com o nosso trabalho, mudamos não só sorrisos, mas vidas inteiras!</p>
-      </div>
-
-      <div class="relative mx-auto max-w-5xl px-6 lg:px-8 z-10" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="100">
-        <div id="testimonials-carousel" class="relative overflow-hidden rounded-3xl bg-white shadow-[0_20px_50px_rgba(26,61,92,0.07)] border border-slate-100 p-8 md:p-12" role="region" aria-label="Carrossel de depoimentos" aria-live="polite">
-          <div id="testimonials-track" class="flex transition-transform duration-500 ease-in-out">
-
-            <article class="min-w-full shrink-0 px-4 md:px-10 text-center">
-              <div class="star-row text-yellow-400 text-2xl mb-6" aria-label="5 estrelas">
-                <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
-              </div>
-              <blockquote class="font-serif text-xl md:text-2xl italic leading-relaxed text-slate-700 mb-8">"Excelente atendimento! A equipe é muito profissional e atenciosa. Meu sorriso ficou incrível após o tratamento com implantes. Recomendo a todos!"</blockquote>
-              <footer class="flex items-center justify-center gap-4">
-                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-brand-dark text-lg font-bold text-brand-primary" aria-hidden="true">M</div>
-                <div class="text-left">
-                  <cite class="not-italic block text-brand-dark font-bold">Maria Silva</cite>
-                  <span class="text-sm text-slate-500"><i class="fa-solid fa-circle-check text-brand-primary mr-1" aria-hidden="true"></i>Paciente</span>
-                </div>
-              </footer>
-            </article>
-
-            <article class="min-w-full shrink-0 px-4 md:px-10 text-center">
-              <div class="star-row text-yellow-400 text-2xl mb-6" aria-label="5 estrelas">
-                <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
-              </div>
-              <blockquote class="font-serif text-xl md:text-2xl italic leading-relaxed text-slate-700 mb-8">"Clínica de referência em Araucária. Fiz clareamento dental e o resultado superou minhas expectativas. Ambiente moderno e equipe muito qualificada."</blockquote>
-              <footer class="flex items-center justify-center gap-4">
-                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-brand-dark text-lg font-bold text-brand-primary" aria-hidden="true">J</div>
-                <div class="text-left">
-                  <cite class="not-italic block text-brand-dark font-bold">João Pereira</cite>
-                  <span class="text-sm text-slate-500"><i class="fa-solid fa-circle-check text-brand-primary mr-1" aria-hidden="true"></i>Paciente</span>
-                </div>
-              </footer>
-            </article>
-
-            <article class="min-w-full shrink-0 px-4 md:px-10 text-center">
-              <div class="star-row text-yellow-400 text-2xl mb-6" aria-label="5 estrelas">
-                <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
-              </div>
-              <blockquote class="font-serif text-xl md:text-2xl italic leading-relaxed text-slate-700 mb-8">"Levei meu filho para odontopediatria e foi uma experiência maravilhosa. A Dra. foi super paciente e carinhosa. Clínica completa e bem estruturada."</blockquote>
-              <footer class="flex items-center justify-center gap-4">
-                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-brand-dark text-lg font-bold text-brand-primary" aria-hidden="true">A</div>
-                <div class="text-left">
-                  <cite class="not-italic block text-brand-dark font-bold">Ana Costa</cite>
-                  <span class="text-sm text-slate-500"><i class="fa-solid fa-circle-check text-brand-primary mr-1" aria-hidden="true"></i>Paciente</span>
-                </div>
-              </footer>
-            </article>
-
-            <article class="min-w-full shrink-0 px-4 md:px-10 text-center">
-              <div class="star-row text-yellow-400 text-2xl mb-6" aria-label="5 estrelas">
-                <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
-              </div>
-              <blockquote class="font-serif text-xl md:text-2xl italic leading-relaxed text-slate-700 mb-8">"Fiz harmonização orofacial e ficou natural, exatamente como eu queria. Dr. Leonardo Coser é um profissional excepcional. Nota 10!"</blockquote>
-              <footer class="flex items-center justify-center gap-4">
-                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-brand-dark text-lg font-bold text-brand-primary" aria-hidden="true">R</div>
-                <div class="text-left">
-                  <cite class="not-italic block text-brand-dark font-bold">Roberto Lima</cite>
-                  <span class="text-sm text-slate-500"><i class="fa-solid fa-circle-check text-brand-primary mr-1" aria-hidden="true"></i>Paciente</span>
-                </div>
-              </footer>
-            </article>
-
+        <div class="reviews-widget" data-reviews-carousel role="region" aria-roledescription="carrossel" aria-label="Avaliações do Google">
+          <div class="reviews-widget__header">
+            <div class="reviews-widget__google">
+              <svg class="reviews-widget__google-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+              Avaliações no Google
+            </div>
+            <div class="reviews-widget__score">
+              <span class="reviews-widget__stars" aria-hidden="true">★★★★★</span>
+              <span data-google-score>4,7 · 500+ avaliações</span>
+            </div>
           </div>
+          <div class="reviews-widget__viewport">
+            <div class="reviews-widget__track"></div>
+          </div>
+          <div class="reviews-widget__footer">
+            <button type="button" class="reviews-widget__btn reviews-widget__btn--prev bg-brand-primary text-white" aria-label="Avaliação anterior"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+            <div class="reviews-widget__dots"></div>
+            <button type="button" class="reviews-widget__btn reviews-widget__btn--next bg-brand-primary text-white" aria-label="Próxima avaliação"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+          </div>
+        </div>
 
-          <button id="carousel-prev" class="absolute left-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-brand-dark shadow-md transition-all hover:bg-brand-primary hover:text-white hover:scale-110" aria-label="Ver depoimento anterior">
-            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-          </button>
-          <button id="carousel-next" class="absolute right-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-brand-dark shadow-md transition-all hover:bg-brand-primary hover:text-white hover:scale-110" aria-label="Ver próximo depoimento">
-            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-          </button>
+        <div class="text-center mt-10">
+          <a href="#" data-wa="general" class="btn-hero-cta" target="_blank" rel="noopener noreferrer" aria-label="Agendar avaliação gratuita pelo WhatsApp">
+            <i class="fa-brands fa-whatsapp shrink-0 text-[22px] leading-none" aria-hidden="true"></i>
+            <span class="whitespace-nowrap text-sm font-bold">Agendar Avaliação Grátis</span>
+          </a>
         </div>
       </div>
     </section>
@@ -798,7 +792,7 @@
               <span class="faq-icon-plus h-6 w-6 shrink-0 fill-brand-primary" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m11 11h-7.25c-.414 0-.75.336-.75.75s.336.75.75.75h7.25v7.25c0 .414.336.75.75.75s.75-.336.75-.75v-7.25h7.25c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-7.25v-7.25c0-.414-.336-.75-.75-.75s-.75.336-.75.75z"/></svg></span>
               <span class="faq-icon-minus hidden h-6 w-6 shrink-0 fill-brand-primary" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m21 11.75c0-.414-.336-.75-.75-.75h-16.5c-.414 0-.75.336-.75.75s.336.75.75.75h16.5c.414 0 .75-.336.75-.75z"/></svg></span>
             </button>
-            <div id="faq-answer-1" class="faq-answer"><div class="overflow-hidden"><p class="pb-5 text-sm leading-relaxed text-slate-600 pl-8">Consulte nossas condições via WhatsApp, ou agendando uma avaliação aqui na nossa clínica!</p></div></div>
+            <div id="faq-answer-1" class="faq-answer"><div class="overflow-hidden"><p class="pb-5 text-sm leading-relaxed text-slate-600 pl-8">Consulte nossas condições via WhatsApp, ou agendando uma avaliação aqui na nossa clínica! <a href="#" data-wa="general" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 mt-2 font-semibold text-brand-primary hover:underline"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>Falar no WhatsApp</a></p></div></div>
           </div>
 
           <div class="faq-item border-b border-gray-200">
@@ -849,7 +843,7 @@
             </li>
             <li class="contact-row flex items-start gap-4">
               <i class="fa-brands fa-whatsapp mt-1 text-brand-primary text-xl shrink-0" aria-hidden="true"></i>
-              <a href="https://wa.me/5541992159233" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">(41) 99215-9233 — WhatsApp</a>
+              <a href="#" data-wa="general" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">(41) 99215-9233 — WhatsApp</a>
             </li>
           </ul>
         </address>
@@ -864,7 +858,7 @@
         </div>
 
         <div class="mt-8 flex gap-4">
-          <a href="https://wa.me/5541992159233" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-brand-primary hover:scale-110" aria-label="Odonto Coser no WhatsApp">
+          <a href="#" data-wa="general" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-brand-primary hover:scale-110" aria-label="Odonto Coser no WhatsApp">
             <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
           </a>
           <a href="https://www.instagram.com/odontocoser" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-brand-primary hover:scale-110" aria-label="Odonto Coser no Instagram">
@@ -876,10 +870,11 @@
         </div>
       </div>
 
-      <div id="localizacao" class="min-h-[400px] overflow-hidden rounded-2xl shadow-2xl border border-slate-700 relative" data-aos="fade-left" data-aos-duration="700">
+      <div id="localizacao" class="min-h-[580px] lg:min-h-[640px] overflow-hidden rounded-2xl shadow-2xl border border-slate-700 relative" data-aos="fade-left" data-aos-duration="700">
         <iframe
-          src="https://maps.google.com/maps?q=Odonto+Coser,+R.+Paulo+Alves+Pinto,+585+-+Centro,+Arauc%C3%A1ria+-+PR,+83702-240&t=&z=16&ie=UTF8&iwloc=&output=embed"
-          class="h-full min-h-[400px] w-full border-0"
+          id="map-iframe"
+          src="about:blank"
+          class="h-full min-h-[580px] lg:min-h-[640px] w-full border-0"
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
@@ -898,6 +893,8 @@
 
   <!-- AOS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/site-config.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/reviews-carousel.js"></script>
 </body>
 </html>

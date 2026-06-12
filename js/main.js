@@ -2,8 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initAOS();
   initMobileMenu();
   initFAQ();
-  initTestimonialsCarousel();
   initSmoothScroll();
+  initWhatsAppLinks();
+  initMapEmbed();
+  initReviewsHeader();
 });
 
 function initAOS() {
@@ -56,12 +58,14 @@ function initFAQ() {
 
   items.forEach(item => {
     const btn = item.querySelector('.faq-question');
+    if (!btn) return;
     btn.addEventListener('click', () => {
       const isActive = item.classList.contains('is-active');
 
       items.forEach(i => {
         i.classList.remove('is-active');
-        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        const q = i.querySelector('.faq-question');
+        if (q) q.setAttribute('aria-expanded', 'false');
       });
 
       if (!isActive) {
@@ -72,40 +76,13 @@ function initFAQ() {
   });
 }
 
-function initTestimonialsCarousel() {
-  const track = document.getElementById('testimonials-track');
-  const prevBtn = document.getElementById('carousel-prev');
-  const nextBtn = document.getElementById('carousel-next');
-  const carousel = document.getElementById('testimonials-carousel');
-  if (!track || !prevBtn || !nextBtn) return;
-
-  const cards = track.children;
-  let currentIndex = 0;
-  const total = cards.length;
-
-  function goTo(index) {
-    if (index < 0) index = total - 1;
-    if (index >= total) index = 0;
-    currentIndex = index;
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
-  }
-
-  prevBtn.addEventListener('click', () => goTo(currentIndex - 1));
-  nextBtn.addEventListener('click', () => goTo(currentIndex + 1));
-
-  let autoplay = setInterval(() => goTo(currentIndex + 1), 5000);
-
-  carousel.addEventListener('mouseenter', () => clearInterval(autoplay));
-  carousel.addEventListener('mouseleave', () => {
-    autoplay = setInterval(() => goTo(currentIndex + 1), 5000);
-  });
-}
-
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    if (anchor.hasAttribute('data-wa') || anchor.hasAttribute('data-wa-service')) return;
+
     anchor.addEventListener('click', e => {
       const targetId = anchor.getAttribute('href');
-      if (targetId === '#') return;
+      if (!targetId || targetId === '#') return;
 
       const target = document.querySelector(targetId);
       if (!target) return;
@@ -115,4 +92,34 @@ function initSmoothScroll() {
       window.scrollTo({ top, behavior: 'smooth' });
     });
   });
+}
+
+function initWhatsAppLinks() {
+  if (typeof window.buildWhatsAppLink !== 'function') return;
+
+  document.querySelectorAll('[data-wa="general"]').forEach(el => {
+    el.href = window.buildWhatsAppLink();
+  });
+
+  document.querySelectorAll('[data-wa-service]').forEach(el => {
+    el.href = window.buildWhatsAppLink(el.getAttribute('data-wa-service'));
+  });
+}
+
+function initMapEmbed() {
+  const cfg = window.SITE_CONFIG;
+  const iframe = document.getElementById('map-iframe');
+  if (cfg && cfg.mapsEmbedSrc && iframe) {
+    iframe.src = cfg.mapsEmbedSrc;
+  }
+}
+
+function initReviewsHeader() {
+  const cfg = window.SITE_CONFIG;
+  if (!cfg) return;
+
+  const scoreEl = document.querySelector('[data-google-score]');
+  if (scoreEl) {
+    scoreEl.textContent = String(cfg.googleRating).replace('.', ',') + ' · ' + cfg.googleReviewCount + ' avaliações';
+  }
 }
