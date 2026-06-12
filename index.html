@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5QR9XWVT');</script>
+  <!-- End Google Tag Manager -->
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -244,6 +252,15 @@
     }
     .group:hover .specialty-icon { transform: scale(1.15); filter: brightness(0) invert(1) contrast(1.4); }
 
+    /* ─── Specialist cards ─── */
+    .specialist-card {
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .specialist-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(26, 61, 92, 0.12);
+    }
+
     /* ─── FAQ accordion ─── */
     .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s ease; }
     .faq-item.is-active .faq-answer { grid-template-rows: 1fr; }
@@ -297,6 +314,11 @@
   <link rel="icon" href="assets/Odonto-Coser.webp" type="image/webp">
 </head>
 <body class="font-sans text-slate-600 antialiased overflow-x-hidden bg-slate-50">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QR9XWVT"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
 
   <!-- ═══════════════ HEADER ═══════════════ -->
   <header id="topo" class="fixed inset-x-0 top-0 z-50 h-20 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all" role="banner">
@@ -307,6 +329,7 @@
       <nav id="desktop-nav" class="hidden items-center gap-10 justify-self-center md:flex" aria-label="Navegação principal">
         <a href="#especialidades" class="text-sm font-semibold tracking-wide text-brand-dark transition-colors hover:text-brand-primary">Especialidades</a>
         <a href="#quem-somos" class="text-sm font-semibold tracking-wide text-brand-dark transition-colors hover:text-brand-primary">Quem somos</a>
+        <a href="#especialistas" class="text-sm font-semibold tracking-wide text-brand-dark transition-colors hover:text-brand-primary">Especialistas</a>
         <a href="#localizacao" class="text-sm font-semibold tracking-wide text-brand-dark transition-colors hover:text-brand-primary">Localização</a>
         <a href="#contato" class="text-sm font-semibold tracking-wide text-brand-dark transition-colors hover:text-brand-primary">Contato</a>
       </nav>
@@ -341,6 +364,9 @@
       </a>
       <a href="#quem-somos" class="flex items-center gap-3 rounded-xl px-4 py-3.5 text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-primary transition-all">
         <i class="fa-solid fa-user-doctor w-5 text-brand-primary" aria-hidden="true"></i>Quem somos
+      </a>
+      <a href="#especialistas" class="flex items-center gap-3 rounded-xl px-4 py-3.5 text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-primary transition-all">
+        <i class="fa-solid fa-users w-5 text-brand-primary" aria-hidden="true"></i>Especialistas
       </a>
       <a href="#localizacao" class="flex items-center gap-3 rounded-xl px-4 py-3.5 text-base font-semibold text-brand-dark hover:bg-brand-light hover:text-brand-primary transition-all">
         <i class="fa-solid fa-location-dot w-5 text-brand-primary" aria-hidden="true"></i>Localização
@@ -735,6 +761,40 @@
             Conhecer a Clínica
           </a>
         </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ ESPECIALISTAS ═══════════════ -->
+    <section id="especialistas" class="bg-white py-24 lg:py-32 border-t border-slate-100" aria-labelledby="especialistas-heading">
+      <div class="section-container">
+        <header class="mb-16 text-center" data-aos="fade-up" data-aos-duration="700">
+          <span class="text-brand-primary font-bold tracking-widest text-sm uppercase mb-3 block"><i class="fa-solid fa-user-doctor mr-2" aria-hidden="true"></i>Nossa Equipe</span>
+          <h2 id="especialistas-heading" class="font-serif text-4xl font-bold text-brand-dark sm:text-5xl">Especialistas</h2>
+          <p class="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-600">Profissionais qualificados e dedicados ao seu sorriso, unindo tradição familiar e excelência clínica em Araucária.</p>
+        </header>
+
+        <ul class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 list-none" role="list">
+          <li class="specialist-card group rounded-2xl bg-slate-50 p-6 text-center border border-slate-100 shadow-sm" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0">
+            <div class="img-hover-zoom mx-auto mb-6 aspect-[3/4] max-w-[280px] overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-slate-200/80">
+              <img src="assets/especialistas/Dr-Leonardo-Coser.webp" alt="Dr. Leonardo Coser — Cirurgião-Dentista da Odonto Coser" width="560" height="747" loading="lazy" class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+            </div>
+            <h3 class="font-serif text-xl font-bold text-brand-dark">Dr. Leonardo Coser</h3>
+          </li>
+
+          <li class="specialist-card group rounded-2xl bg-slate-50 p-6 text-center border border-slate-100 shadow-sm" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+            <div class="img-hover-zoom mx-auto mb-6 aspect-[3/4] max-w-[280px] overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-slate-200/80">
+              <img src="assets/especialistas/Dra-Gabrielle-Coser.webp" alt="Dra. Gabrielle Coser — Odontologista da Odonto Coser" width="560" height="747" loading="lazy" class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+            </div>
+            <h3 class="font-serif text-xl font-bold text-brand-dark">Dra. Gabrielle Coser</h3>
+          </li>
+
+          <li class="specialist-card group rounded-2xl bg-slate-50 p-6 text-center border border-slate-100 shadow-sm" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+            <div class="img-hover-zoom mx-auto mb-6 aspect-[3/4] max-w-[280px] overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-slate-200/80">
+              <img src="assets/especialistas/Dra-Virginia-Azuzani.webp" alt="Dra. Virginia Azuzani — Odontologista da Odonto Coser" width="560" height="747" loading="lazy" class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+            </div>
+            <h3 class="font-serif text-xl font-bold text-brand-dark">Dra. Virginia Azuzani</h3>
+          </li>
+        </ul>
       </div>
     </section>
 
